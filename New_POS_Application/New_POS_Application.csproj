@@ -73,6 +73,12 @@
     <Compile Include="POS_Cashier_Interface.Designer.cs">
       <DependentUpon>POS_Cashier_Interface.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS_Cashier_Interface_Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_Cashier_Interface_Class.Designer.cs">
+      <DependentUpon>POS_Cashier_Interface_Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS_Class.cs" />
     <Compile Include="POS_EmployeeSalary_Class.cs">
       <SubType>Form</SubType>
@@ -131,8 +137,18 @@
     <Compile Include="QRscanner.Designer.cs">
       <DependentUpon>QRscanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="TuitionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TuitionForm.Designer.cs">
+      <DependentUpon>TuitionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TuitonClass.cs" />
     <EmbeddedResource Include="POS_Cashier_Interface.resx">
       <DependentUpon>POS_Cashier_Interface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_Cashier_Interface_Class.resx">
+      <DependentUpon>POS_Cashier_Interface_Class.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS_EmployeeSalary_Class.resx">
       <DependentUpon>POS_EmployeeSalary_Class.cs</DependentUpon>
@@ -170,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="QRscanner.resx">
       <DependentUpon>QRscanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TuitionForm.resx">
+      <DependentUpon>TuitionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

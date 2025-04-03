@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace New_POS_Application
 {
@@ -18,7 +19,39 @@ namespace New_POS_Application
         {
             Environment.Exit(0);
         }
+        
+        //POS_CashierInterface
 
+        public string[] DinnerPrice = {"100", "115", "130", "145", "170", "185", "210", "225", "235", "215", "270", "125", "135",
+        "165", "189", "125", "137", "180", "250", "239"};
+        public string[] LunchPrice = {"99", "70", "80", "85", "79", "120", "110", "85", "75", "150", "115", "95", "97",
+        "85", "95", "87", "67", "90", "91", "119"};
+        public string[] DessertsPrice = {"125", "150", "145", "139", "200", "190", "85", "90", "110", "150", "170", "160", "120",
+        "123", "145", "169", "115", "150", "175", "96"};
+        public string[] BreakfastPrice = {"87", "90", "120", "110", "115", "140", "60", "75", "89", "99", "109", "129", "79",
+        "80", "99", "120", "119", "99", "100", "118"};
+        public string[] BeveragesPrice = {"200", "250", "299", "199", "230", "50", "70", "40", "60", "49", "59", "58", "50",
+        "60", "85", "70", "79", "90", "89", "69"};
+        public string[] CoffeePrice = {"80", "89", "110", "100", "99", "79", "120", "89", "69", "105", "80", "79", "76",
+        "91", "95", "86", "99", "100", "102", "79"};
+
+        public string filepath = "D:\\repos\\New_POS_Application\\images\\";
+
+        public double discount(double qty, double price, double disc)
+        {
+            return (qty * price) * disc;
+        }
+        public double totalprice(double qty, double price, double discountamt)
+        {
+            return (qty * price) - discountamt;
+        }
+
+        public double calc(double cash, double discount)
+        {          
+                return cash - discount;
+        }
+
+        //POS_OrderingApp_Class
         public double OA_TotalPrice(double price, double discount_amount, int qty)
         {
             return (price - discount_amount) * qty;
@@ -103,18 +136,5 @@ namespace New_POS_Application
         {
             return hrs * rate;
         }
-
-        //POS_Cashier_Interface
-        public Double amount_paid;
-        public Double price;
-        public Double cash_given;
-        public Double change;
-        public Double qty_total = 0;
-        public Double discount_totalgiven = 0;
-        public Double discounted_total = 0;
-        public Double discount_amt;
-        public Double discounted_amt;
-        public Double total_amountPaid;
-        public Int32 quantity;
     }
 }

@@ -27,7 +27,7 @@ namespace New_POS_Application
         private void LogIn_btn_Click(object sender, EventArgs e)
         {
             string username, password;
-            password = "12345";
+            password = "systemad12345";
             username = "admin";
             if (usernameTxtbox.Text == username && Password_tbox.Text == password)
             {
@@ -37,24 +37,24 @@ namespace New_POS_Application
                 clearbox();
                 this.Hide();
             }
-            else if (usernameTxtbox.Text == "cashier" && Password_tbox.Text == "12345")
+            else if (usernameTxtbox.Text == "cashierresto" && Password_tbox.Text == "resto123")
             {
                 MessageBox.Show("Welcome Cashier Point of Sale Page");
-                POS_Cashier_Interface cashierfrm = new POS_Cashier_Interface();
+                POS_Cashier_Interface_Class cashierfrm = new POS_Cashier_Interface_Class();
                 cashierfrm.Show();
                 clearbox();
             }
-            else if (usernameTxtbox.Text == "cashier1" && Password_tbox.Text == "22222")
+            else if (usernameTxtbox.Text == "cashierpizza" && Password_tbox.Text == "pizza123")
             {
                 MessageBox.Show("Welcome Cashier Ordering POS Page");
-                POS_Ordering_App cashierfrm = new POS_Ordering_App();
+                POS_Ordering_App_Class cashierfrm = new POS_Ordering_App_Class();
                 cashierfrm.Show();
                 clearbox();
             }
-            else if (usernameTxtbox.Text == "payrol" && Password_tbox.Text == "11111")
+            else if (usernameTxtbox.Text == "payroll" && Password_tbox.Text == "emppayroll123")
             {
                 MessageBox.Show("Welcome Payrol Page");
-                POS_EmployeeSalary payrolfrm = new POS_EmployeeSalary();
+                POS_EmployeeSalary_Class payrolfrm = new POS_EmployeeSalary_Class();
                 payrolfrm.Show();
                 clearbox();
             }
