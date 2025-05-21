@@ -1592,6 +1592,7 @@
             this.Controls.Add(this.pic6_pbox);
             this.Controls.Add(this.pic1_pbox);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "POS_admin";
             this.Text = "POS_admin";
             this.groupBox1.ResumeLayout(false);

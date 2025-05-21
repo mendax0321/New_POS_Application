@@ -89,6 +89,7 @@
       <DependentUpon>POS_Cashier_Interface_Class.cs</DependentUpon>
     </Compile>
     <Compile Include="POS_Class.cs" />
+    <Compile Include="POS_dbconnect.cs" />
     <Compile Include="POS_EmployeeSalary_Class.cs">
       <SubType>Form</SubType>
     </Compile>
