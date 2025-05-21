@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
@@ -67,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="POS_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_admin.Designer.cs">
+      <DependentUpon>POS_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS_Cashier_Interface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +146,12 @@
     <Compile Include="QRscanner.Designer.cs">
       <DependentUpon>QRscanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentDB.Designer.cs">
+      <DependentUpon>StudentDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="TuitionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +159,9 @@
       <DependentUpon>TuitionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TuitonClass.cs" />
+    <EmbeddedResource Include="POS_admin.resx">
+      <DependentUpon>POS_admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POS_Cashier_Interface.resx">
       <DependentUpon>POS_Cashier_Interface.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,9 +205,13 @@
     <EmbeddedResource Include="QRscanner.resx">
       <DependentUpon>QRscanner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentDB.resx">
+      <DependentUpon>StudentDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TuitionForm.resx">
       <DependentUpon>TuitionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
