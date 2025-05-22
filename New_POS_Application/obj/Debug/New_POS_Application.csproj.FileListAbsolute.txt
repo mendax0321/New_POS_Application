@@ -194,3 +194,4 @@ C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\o
 C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_.3595D169.Up2Date
 C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.exe
 C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.pdb
+D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_admin.resources

@@ -196,10 +196,10 @@
             this.groupBox1.Controls.Add(this.Update_btn);
             this.groupBox1.Controls.Add(this.Save_btn);
             this.groupBox1.Controls.Add(this.Search_btn);
-            this.groupBox1.Location = new System.Drawing.Point(1081, 10);
+            this.groupBox1.Location = new System.Drawing.Point(1060, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 661);
+            this.groupBox1.Size = new System.Drawing.Size(244, 661);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -207,7 +207,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Location = new System.Drawing.Point(30, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 3;
@@ -216,9 +216,9 @@
             // POSID_cbox
             // 
             this.POSID_cbox.FormattingEnabled = true;
-            this.POSID_cbox.Location = new System.Drawing.Point(6, 45);
+            this.POSID_cbox.Location = new System.Drawing.Point(33, 39);
             this.POSID_cbox.Name = "POSID_cbox";
-            this.POSID_cbox.Size = new System.Drawing.Size(161, 21);
+            this.POSID_cbox.Size = new System.Drawing.Size(192, 21);
             this.POSID_cbox.TabIndex = 2;
             // 
             // GridView
@@ -226,14 +226,14 @@
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView.Location = new System.Drawing.Point(6, 429);
             this.GridView.Name = "GridView";
-            this.GridView.Size = new System.Drawing.Size(161, 226);
+            this.GridView.Size = new System.Drawing.Size(232, 226);
             this.GridView.TabIndex = 1;
             // 
             // Exit_btn
             // 
             this.Exit_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.Exit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit_btn.Location = new System.Drawing.Point(6, 371);
+            this.Exit_btn.Location = new System.Drawing.Point(49, 365);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(161, 52);
             this.Exit_btn.TabIndex = 0;
@@ -245,7 +245,7 @@
             // 
             this.New_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.New_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.New_btn.Location = new System.Drawing.Point(6, 313);
+            this.New_btn.Location = new System.Drawing.Point(49, 307);
             this.New_btn.Name = "New_btn";
             this.New_btn.Size = new System.Drawing.Size(161, 52);
             this.New_btn.TabIndex = 0;
@@ -257,7 +257,7 @@
             // 
             this.Delete_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.Delete_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_btn.Location = new System.Drawing.Point(6, 255);
+            this.Delete_btn.Location = new System.Drawing.Point(49, 249);
             this.Delete_btn.Name = "Delete_btn";
             this.Delete_btn.Size = new System.Drawing.Size(161, 52);
             this.Delete_btn.TabIndex = 0;
@@ -269,7 +269,7 @@
             // 
             this.Update_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.Update_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_btn.Location = new System.Drawing.Point(6, 197);
+            this.Update_btn.Location = new System.Drawing.Point(49, 191);
             this.Update_btn.Name = "Update_btn";
             this.Update_btn.Size = new System.Drawing.Size(161, 52);
             this.Update_btn.TabIndex = 0;
@@ -281,7 +281,7 @@
             // 
             this.Save_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.Save_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save_btn.Location = new System.Drawing.Point(6, 139);
+            this.Save_btn.Location = new System.Drawing.Point(49, 133);
             this.Save_btn.Name = "Save_btn";
             this.Save_btn.Size = new System.Drawing.Size(161, 52);
             this.Save_btn.TabIndex = 0;
@@ -293,7 +293,7 @@
             // 
             this.Search_btn.BackColor = System.Drawing.Color.RosyBrown;
             this.Search_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_btn.Location = new System.Drawing.Point(6, 81);
+            this.Search_btn.Location = new System.Drawing.Point(49, 75);
             this.Search_btn.Name = "Search_btn";
             this.Search_btn.Size = new System.Drawing.Size(161, 52);
             this.Search_btn.TabIndex = 0;
@@ -1470,7 +1470,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1314, 681);
             this.Controls.Add(this.picpath20_tbox);
             this.Controls.Add(this.picpath15_tbox);
             this.Controls.Add(this.picpath10_tbox);
@@ -1594,7 +1594,9 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.Name = "POS_admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS_admin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();

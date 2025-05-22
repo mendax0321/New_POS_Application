@@ -24,6 +24,18 @@ namespace New_POS_Application
         {
             InitializeComponent();
             dbconnect.pos_connString();
+            try
+            {
+                dbconnect.pos_select();
+                dbconnect.pos_cmd();
+                dbconnect.pos_sqladapterSelect();
+                dbconnect.pos_sqldatasetSELECT();
+                GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error occurs in this area. Please contact your administrator!");
+            }
             HidePath();
         }
 
@@ -128,7 +140,7 @@ namespace New_POS_Application
                 MessageBox.Show("Error occurs in this area. Please contact your administrator!");
             }
         }
-
+       
         private void Save_btn_Click(object sender, EventArgs e)
         {
             try
@@ -447,7 +459,7 @@ namespace New_POS_Application
 
         private void PictureSelect()
         {
-            PicFile.Filter = "Image File | * .gif; * .jpg; * .png; * .bmp;";
+            PicFile.Filter = "Image File | * .gif; * .jpg; * .png; * .bmp; * .jfif;";
             PicFile.Title = "Select Picture";
             PicFile.ShowDialog();
         }
@@ -456,7 +468,7 @@ namespace New_POS_Application
         {
             try
             {
-                defaultpic = Image.FromFile("C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\images\\noimage.jpg");
+                defaultpic = Image.FromFile("D:\\repos\\mendax0321\\New_POS_Application\\images\\noimage.jpg");
                
                 picpath1_tbox.Clear(); picpath2_tbox.Clear(); picpath3_tbox.Clear();
                 picpath4_tbox.Clear(); picpath5_tbox.Clear(); picpath6_tbox.Clear();

@@ -6,16 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.Aztec;
+using Image = System.Drawing.Image;
 
 namespace New_POS_Application
 {
     public partial class POS_Cashier_Interface_Class : Form
     {
+        POS_dbconnect dbconnect = new POS_dbconnect();
         POS_Class PC = new POS_Class();
         int qty, qty_total = 0, x = 0; 
         double price ,discount_amt, discounted_amt, cash_rendered = 0, change = 0, discount_totalgiven = 0, discounted_total = 0;
@@ -23,6 +26,13 @@ namespace New_POS_Application
         public POS_Cashier_Interface_Class()
         {
             InitializeComponent();
+            dbconnect.pos_connString();
+            dbconnect.pos_select();
+            dbconnect.pos_cmd();
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+            EmpID_lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][22].ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,7 +46,6 @@ namespace New_POS_Application
             itemnametxtbox.Text = name1lbl.Text;
             pricetextbox.Text = price1lbl.Text;
             count();
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -139,7 +148,6 @@ namespace New_POS_Application
             itemnametxtbox.Text = name14lbl.Text;
             pricetextbox.Text = price14lbl.Text;
             count();
-
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
@@ -195,7 +203,8 @@ namespace New_POS_Application
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "dinner\\", "d", "Dinner ", PC.DinnerPrice);
+            DBsearch(3);
+            //PB(PC.filepath + "dinner\\", "d", "Dinner ", PC.DinnerPrice);
             /*
             pictureBox1.Image = Image.FromFile(fpdinner + "d1.jfif"); name1lbl.Text = "Dinner 1"; price1lbl.Text = "100";
             pictureBox2.Image = Image.FromFile(fpdinner + "d2.jfif"); name2lbl.Text = "Dinner 2"; price2lbl.Text = "115";
@@ -223,35 +232,40 @@ namespace New_POS_Application
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "lunch\\", "l", "Lunch ", PC.LunchPrice);
+            DBsearch(2);
+            //PB(PC.filepath + "lunch\\", "l", "Lunch ", PC.LunchPrice);
         }
 
         private void dessertsBtn_Click(object sender, EventArgs e)
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "dessert\\", "s", "Desserts ", PC.DessertsPrice);
+            DBsearch(4);
+            //PB(PC.filepath + "dessert\\", "s", "Desserts ", PC.DessertsPrice);
         }
 
         private void breakfastBrn_Click(object sender, EventArgs e)
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "breakfast\\", "b", "Breakfast ", PC.BreakfastPrice);
+            DBsearch(1);
+            //PB(PC.filepath + "breakfast\\", "b", "Breakfast ", PC.BreakfastPrice);
         }
 
         private void beveragesBtn_Click(object sender, EventArgs e)
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "beverages\\", "l", "Beverage ", PC.BeveragesPrice);
+            DBsearch(5);
+            //PB(PC.filepath + "beverages\\", "l", "Beverage ", PC.BeveragesPrice);
         }
 
         private void coffeeBtn_Click(object sender, EventArgs e)
         {
             itemnametxtbox.Clear();
             pricetextbox.Clear();
-            PB(PC.filepath + "coffee\\", "c", "Coffee ", PC.CoffeePrice);
+            DBsearch(6);
+            //PB(PC.filepath + "coffee\\", "c", "Coffee ", PC.CoffeePrice);
         }
 
         //Radio Button
@@ -358,6 +372,101 @@ namespace New_POS_Application
         }
 
         //Functions
+        private int DBsearch(int id)
+        {
+            dbconnect.pos_sql = "SELECT * FROM pos_nameTbl INNER JOIN pos_picTbl ON pos_nameTbl.pos_id = pos_picTbl.pos_id " +
+    "INNER JOIN pos_priceTbl ON pos_picTbl.pos_id = pos_priceTbl.pos_id WHERE pos_nameTbl.pos_id = '"
+    + id + "'";
+            dbconnect.pos_cmd();
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+            name1lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
+            name2lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
+            name3lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
+            name4lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
+            name5lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
+            name6lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
+            name7lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
+            name8lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
+            name9lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
+            name10lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
+            name11lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
+            name12lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
+            name13lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
+            name14lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
+            name15lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
+            name16lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
+            name17lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
+            name18lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
+            name19lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
+            name20lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
+
+            picpath1_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
+            pictureBox1.Image = Image.FromFile(picpath1_tbox.Text);
+            picpath2_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
+            pictureBox2.Image = Image.FromFile(picpath2_tbox.Text);
+            picpath3_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
+            pictureBox3.Image = Image.FromFile(picpath3_tbox.Text);
+            picpath4_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
+            pictureBox4.Image = Image.FromFile(picpath4_tbox.Text);
+            picpath5_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
+            pictureBox5.Image = Image.FromFile(picpath5_tbox.Text);
+            picpath6_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
+            pictureBox6.Image = Image.FromFile(picpath6_tbox.Text);
+            picpath7_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
+            pictureBox7.Image = Image.FromFile(picpath7_tbox.Text);
+            picpath8_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
+            pictureBox8.Image = Image.FromFile(picpath8_tbox.Text);
+            picpath9_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
+            pictureBox9.Image = Image.FromFile(picpath9_tbox.Text);
+            picpath10_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
+            pictureBox10.Image = Image.FromFile(picpath10_tbox.Text);
+            picpath11_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
+            pictureBox11.Image = Image.FromFile(picpath11_tbox.Text);
+            picpath12_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
+            pictureBox12.Image = Image.FromFile(picpath12_tbox.Text);
+            picpath13_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
+            pictureBox13.Image = Image.FromFile(picpath13_tbox.Text);
+            picpath14_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
+            pictureBox14.Image = Image.FromFile(picpath14_tbox.Text);
+            picpath15_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
+            pictureBox15.Image = Image.FromFile(picpath15_tbox.Text);
+            picpath16_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
+            pictureBox16.Image = Image.FromFile(picpath16_tbox.Text);
+            picpath17_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
+            pictureBox17.Image = Image.FromFile(picpath17_tbox.Text);
+            picpath18_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
+            pictureBox18.Image = Image.FromFile(picpath18_tbox.Text);
+            picpath19_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
+            pictureBox19.Image = Image.FromFile(picpath19_tbox.Text);
+            picpath20_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
+            pictureBox20.Image = Image.FromFile(picpath20_tbox.Text);
+
+            price1lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
+            price2lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
+            price3lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
+            price4lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
+            price5lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
+            price6lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
+            price7lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
+            price8lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
+            price9lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
+            price10lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
+            price11lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
+            price12lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
+            price13lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
+            price14lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
+            price15lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
+            price16lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
+            price17lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
+            price18lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
+            price19lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
+            price20lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
+
+            return id;
+        }
+
         private void ClearFrm()
         {
             radioButton1.Checked = false;
@@ -375,7 +484,7 @@ namespace New_POS_Application
             cashre_renderedtxtbox.Clear();
             changetxtbox.Clear();
         }
-        private void PB(string filepth, string filenm, string foodname, string[] tite)
+        /*private void PB(string filepth, string filenm, string foodname, string[] tite)
         {
             PictureBox[] PB = {pictureBox1 ,pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7,
             pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15,
@@ -407,7 +516,7 @@ namespace New_POS_Application
                 label.Text = tite[prclbl];
                 prclbl++;
             }
-        }
+        }*/
 
         private void qrt_prc_tbox()
         {
@@ -423,6 +532,27 @@ namespace New_POS_Application
 
         private void startup()
         {
+            //GridView.Hide();
+            picpath1_tbox.Hide();
+            picpath2_tbox.Hide();
+            picpath3_tbox.Hide();
+            picpath4_tbox.Hide();
+            picpath5_tbox.Hide();
+            picpath6_tbox.Hide();
+            picpath7_tbox.Hide();
+            picpath8_tbox.Hide();
+            picpath9_tbox.Hide();
+            picpath10_tbox.Hide();
+            picpath11_tbox.Hide();
+            picpath12_tbox.Hide();
+            picpath13_tbox.Hide();
+            picpath14_tbox.Hide();
+            picpath15_tbox.Hide();
+            picpath16_tbox.Hide();
+            picpath17_tbox.Hide();
+            picpath18_tbox.Hide();
+            picpath19_tbox.Hide();
+            picpath20_tbox.Hide();
             price1lbl.Hide();
             price2lbl.Hide();
             price3lbl.Hide();
