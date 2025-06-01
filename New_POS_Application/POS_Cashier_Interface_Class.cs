@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using AForge.Video;
@@ -13,6 +14,7 @@ using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.Aztec;
 using Image = System.Drawing.Image;
+using MessageBox = System.Windows.MessageBox;
 
 namespace New_POS_Application
 {
@@ -20,6 +22,7 @@ namespace New_POS_Application
     {
         POS_dbconnect dbconnect = new POS_dbconnect();
         POS_Class PC = new POS_Class();
+        string defaultpic = "D:\\repos\\mendax0321\\New_POS_Application\\images\\noimage.jpg";
         int qty, qty_total = 0, x = 0; 
         double price ,discount_amt, discounted_amt, cash_rendered = 0, change = 0, discount_totalgiven = 0, discounted_total = 0;
 
@@ -340,6 +343,72 @@ namespace New_POS_Application
                     disconted_totaltxtbox.Text = discounted_total.ToString();
                     changetxtbox.Text = change.ToString();
                     cashre_renderedtxtbox.Text = cash_rendered.ToString();
+                    try
+                    {
+                        if (radioButton1.Checked == true)
+                        {
+                            dbconnect.pos_sql = "INSERT INTO salesTbl (product_name, product_quantity_per_transaction, " +
+                                "product_price, discount_option, discount_amount_per_transaction, discounted_amount_per_transaction, " +
+                                "summary_total_quantity, summary_total_disc_given, summary_total_discounted_amount, " +
+                                "terminal_no, time_date, emp_id) VALUES('" + itemnametxtbox.Text + "', '"
+                                + quantitytxtbox.Text + "', '" + pricetextbox.Text + "', '"
+                                + radioButton1.Text + "', '" + discounttxtbox.Text + "', '"
+                                + discountedtxtbox.Text + "', '" + qty_totaltxtbox.Text + "', '"
+                                + discount_totaltxtbox.Text + "', '" + disconted_totaltxtbox.Text
+                                + "', '" + terminal_lbl.Text + "', '" + timedate.Text + "', '"
+                                + EmpID_lbl.Text + "')";
+                            dbconnect.pos_cmd();
+                            dbconnect.pos_sqladapterInsert();
+                            ClearFrm();
+                        }
+                        else if (regularRbtn.Checked == true)
+                        {
+                            dbconnect.pos_sql = "INSERT INTO salesTbl (product_name, product_quantity_per_transaction, " +
+                                "product_price, discount_option, discount_amount_per_transaction, discounted_amount_per_transaction, " +
+                                "summary_total_quantity, summary_total_disc_given, summary_total_discounted_amount, terminal_no, time_date, emp_id) " +
+                                "VALUES('" + itemnametxtbox.Text + "', '" + quantitytxtbox.Text + "', '"
+                                + pricetextbox.Text + "', '" + regularRbtn.Text + "', '" + discounttxtbox.Text + "', '"
+                                + discountedtxtbox.Text + "', '" + qty_totaltxtbox.Text + "', '" + discount_totaltxtbox.Text + "', '" +
+                                disconted_totaltxtbox.Text + "', '" + terminal_lbl.Text + "', '" + timedate.Text + "', '"
+                                + EmpID_lbl.Text + "')";
+                            dbconnect.pos_cmd();
+                            dbconnect.pos_sqladapterInsert();
+                            ClearFrm();
+                        }
+                        else if (EmployeeRdbtn.Checked == true)
+                        {
+                            dbconnect.pos_sql = "INSERT INTO salesTbl (product_name, product_quantity_per_transaction, product_price, discount_option, " +
+                                "discount_amount_per_transaction, discounted_amount_per_transaction, summary_total_quantity, summary_total_disc_given, " +
+                                "summary_total_discounted_amount, terminal_no, time_date, emp_id) VALUES('"
+                                + itemnametxtbox.Text + "', '" + quantitytxtbox.Text + "', '" + pricetextbox.Text + "', '"
+                                + EmployeeRdbtn.Text + "', '" + discounttxtbox.Text + "', '" + discountedtxtbox.Text + "', '"
+                                + qty_totaltxtbox.Text + "', '" + discount_totaltxtbox.Text + "', '" + disconted_totaltxtbox.Text + "', '"
+                                + terminal_lbl.Text + "', '" + timedate.Text + "', '" + EmpID_lbl.Text + "')";
+                            dbconnect.pos_cmd();
+                            dbconnect.pos_sqladapterInsert();
+                            ClearFrm();
+                        }
+                        else if (noTaxRdbtn.Checked == true)
+                        {
+                            dbconnect.pos_sql = "INSERT INTO salesTbl (product_name, product_quantity_per_transaction, product_price, " +
+                                "discount_option, discount_amount_per_transaction, discounted_amount_per_transaction, summary_total_quantity, " +
+                                "summary_total_disc_given, summary_total_discounted_amount, terminal_no, time_date, emp_id) VALUES('" 
+                                + itemnametxtbox.Text + "', '" + quantitytxtbox.Text + "', '" + pricetextbox.Text + "', '" 
+                                + noTaxRdbtn.Text + "', '" + discounttxtbox.Text + "', '" + discountedtxtbox.Text + "', '" 
+                                + qty_totaltxtbox.Text + "', '" + discount_totaltxtbox.Text + "', '" + disconted_totaltxtbox.Text + "', '" 
+                                + terminal_lbl.Text + "', '" + timedate.Text + "', '" + EmpID_lbl.Text + "')";
+                            dbconnect.pos_cmd();
+                            dbconnect.pos_sqladapterInsert();
+                            ClearFrm();
+                        }
+                        else
+                            MessageBox.Show("No selected discount option");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error occurs in this area. Please contact your administrator for this matter!!!");
+                   }
+
                 }
             }
             catch
@@ -483,6 +552,27 @@ namespace New_POS_Application
             disconted_totaltxtbox.Clear();
             cashre_renderedtxtbox.Clear();
             changetxtbox.Clear();
+            pictureBox1.Image = Image.FromFile(defaultpic);
+            pictureBox2.Image = Image.FromFile(defaultpic);
+            pictureBox3.Image = Image.FromFile(defaultpic);
+            pictureBox4.Image = Image.FromFile(defaultpic);
+            pictureBox5.Image = Image.FromFile(defaultpic);
+            pictureBox6.Image = Image.FromFile(defaultpic);
+            pictureBox7.Image = Image.FromFile(defaultpic);
+            pictureBox8.Image = Image.FromFile(defaultpic);
+            pictureBox9.Image = Image.FromFile(defaultpic);
+            pictureBox10.Image = Image.FromFile(defaultpic);
+            pictureBox11.Image = Image.FromFile(defaultpic);
+            pictureBox12.Image = Image.FromFile(defaultpic);
+            pictureBox13.Image = Image.FromFile(defaultpic);
+            pictureBox14.Image = Image.FromFile(defaultpic);
+            pictureBox15.Image = Image.FromFile(defaultpic);
+            pictureBox16.Image = Image.FromFile(defaultpic);
+            pictureBox17.Image = Image.FromFile(defaultpic);
+            pictureBox18.Image = Image.FromFile(defaultpic);
+            pictureBox19.Image = Image.FromFile(defaultpic);
+            pictureBox20.Image = Image.FromFile(defaultpic);
+
         }
         /*private void PB(string filepth, string filenm, string foodname, string[] tite)
         {
@@ -573,21 +663,6 @@ namespace New_POS_Application
             price18lbl.Hide();
             price19lbl.Hide();
             price20lbl.Hide();
-            pictureBox1.Image = null;
-            pictureBox2.Image = null;
-            pictureBox3.Image = null;
-            pictureBox4.Image = null;
-            pictureBox5.Image = null;
-            pictureBox6.Image = null;
-            pictureBox7.Image = null;
-            pictureBox8.Image = null;
-            pictureBox9.Image = null;
-            pictureBox10.Image = null;
-            pictureBox11.Image = null;
-            pictureBox12.Image = null;
-            pictureBox13.Image = null;
-            pictureBox14.Image = null;
-            pictureBox15.Image = null;
             this.BackColor = Color.Thistle;
             this.Text = "Point of Sale Interface";
         }

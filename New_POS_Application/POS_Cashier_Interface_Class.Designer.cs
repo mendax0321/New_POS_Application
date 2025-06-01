@@ -81,6 +81,27 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.CashScan_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.GridView = new System.Windows.Forms.DataGridView();
+            this.picpath20_tbox = new System.Windows.Forms.TextBox();
+            this.picpath15_tbox = new System.Windows.Forms.TextBox();
+            this.picpath10_tbox = new System.Windows.Forms.TextBox();
+            this.picpath19_tbox = new System.Windows.Forms.TextBox();
+            this.picpath5_tbox = new System.Windows.Forms.TextBox();
+            this.picpath14_tbox = new System.Windows.Forms.TextBox();
+            this.picpath9_tbox = new System.Windows.Forms.TextBox();
+            this.picpath18_tbox = new System.Windows.Forms.TextBox();
+            this.picpath4_tbox = new System.Windows.Forms.TextBox();
+            this.picpath13_tbox = new System.Windows.Forms.TextBox();
+            this.picpath8_tbox = new System.Windows.Forms.TextBox();
+            this.picpath17_tbox = new System.Windows.Forms.TextBox();
+            this.picpath3_tbox = new System.Windows.Forms.TextBox();
+            this.picpath12_tbox = new System.Windows.Forms.TextBox();
+            this.picpath7_tbox = new System.Windows.Forms.TextBox();
+            this.picpath16_tbox = new System.Windows.Forms.TextBox();
+            this.picpath2_tbox = new System.Windows.Forms.TextBox();
+            this.picpath11_tbox = new System.Windows.Forms.TextBox();
+            this.picpath6_tbox = new System.Windows.Forms.TextBox();
+            this.picpath1_tbox = new System.Windows.Forms.TextBox();
             this.name20lbl = new System.Windows.Forms.Label();
             this.name19lbl = new System.Windows.Forms.Label();
             this.name18lbl = new System.Windows.Forms.Label();
@@ -127,34 +148,13 @@
             this.coffeeBtn = new System.Windows.Forms.Button();
             this.beveragesBtn = new System.Windows.Forms.Button();
             this.dessertsBtn = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.terminal_lbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lunchBtn = new System.Windows.Forms.Button();
             this.breakfastBrn = new System.Windows.Forms.Button();
             this.dinnerBtn = new System.Windows.Forms.Button();
-            this.picpath1_tbox = new System.Windows.Forms.TextBox();
-            this.picpath2_tbox = new System.Windows.Forms.TextBox();
-            this.picpath3_tbox = new System.Windows.Forms.TextBox();
-            this.picpath4_tbox = new System.Windows.Forms.TextBox();
-            this.picpath5_tbox = new System.Windows.Forms.TextBox();
-            this.picpath6_tbox = new System.Windows.Forms.TextBox();
-            this.picpath7_tbox = new System.Windows.Forms.TextBox();
-            this.picpath8_tbox = new System.Windows.Forms.TextBox();
-            this.picpath9_tbox = new System.Windows.Forms.TextBox();
-            this.picpath10_tbox = new System.Windows.Forms.TextBox();
-            this.picpath11_tbox = new System.Windows.Forms.TextBox();
-            this.picpath16_tbox = new System.Windows.Forms.TextBox();
-            this.picpath12_tbox = new System.Windows.Forms.TextBox();
-            this.picpath17_tbox = new System.Windows.Forms.TextBox();
-            this.picpath13_tbox = new System.Windows.Forms.TextBox();
-            this.picpath18_tbox = new System.Windows.Forms.TextBox();
-            this.picpath14_tbox = new System.Windows.Forms.TextBox();
-            this.picpath19_tbox = new System.Windows.Forms.TextBox();
-            this.picpath15_tbox = new System.Windows.Forms.TextBox();
-            this.picpath20_tbox = new System.Windows.Forms.TextBox();
-            this.GridView = new System.Windows.Forms.DataGridView();
             this.EmpID_lbl = new System.Windows.Forms.Label();
+            this.timedate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -178,8 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -402,6 +402,7 @@
             // 
             // discountedtxtbox
             // 
+            this.discountedtxtbox.Enabled = false;
             this.discountedtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountedtxtbox.Location = new System.Drawing.Point(155, 125);
             this.discountedtxtbox.Name = "discountedtxtbox";
@@ -410,6 +411,7 @@
             // 
             // discounttxtbox
             // 
+            this.discounttxtbox.Enabled = false;
             this.discounttxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discounttxtbox.Location = new System.Drawing.Point(155, 95);
             this.discounttxtbox.Name = "discounttxtbox";
@@ -418,6 +420,7 @@
             // 
             // pricetextbox
             // 
+            this.pricetextbox.Enabled = false;
             this.pricetextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pricetextbox.Location = new System.Drawing.Point(155, 65);
             this.pricetextbox.Name = "pricetextbox";
@@ -510,6 +513,7 @@
             // 
             // changetxtbox
             // 
+            this.changetxtbox.Enabled = false;
             this.changetxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changetxtbox.Location = new System.Drawing.Point(262, 50);
             this.changetxtbox.Multiline = true;
@@ -520,6 +524,7 @@
             // 
             // cashre_renderedtxtbox
             // 
+            this.cashre_renderedtxtbox.Enabled = false;
             this.cashre_renderedtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashre_renderedtxtbox.Location = new System.Drawing.Point(13, 50);
             this.cashre_renderedtxtbox.Multiline = true;
@@ -895,6 +900,154 @@
             this.groupBox4.TabIndex = 114;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "oo";
+            // 
+            // GridView
+            // 
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(666, 334);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(240, 150);
+            this.GridView.TabIndex = 41;
+            // 
+            // picpath20_tbox
+            // 
+            this.picpath20_tbox.Location = new System.Drawing.Point(547, 561);
+            this.picpath20_tbox.Name = "picpath20_tbox";
+            this.picpath20_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath20_tbox.TabIndex = 40;
+            // 
+            // picpath15_tbox
+            // 
+            this.picpath15_tbox.Location = new System.Drawing.Point(547, 415);
+            this.picpath15_tbox.Name = "picpath15_tbox";
+            this.picpath15_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath15_tbox.TabIndex = 40;
+            // 
+            // picpath10_tbox
+            // 
+            this.picpath10_tbox.Location = new System.Drawing.Point(547, 267);
+            this.picpath10_tbox.Name = "picpath10_tbox";
+            this.picpath10_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath10_tbox.TabIndex = 40;
+            // 
+            // picpath19_tbox
+            // 
+            this.picpath19_tbox.Location = new System.Drawing.Point(417, 561);
+            this.picpath19_tbox.Name = "picpath19_tbox";
+            this.picpath19_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath19_tbox.TabIndex = 40;
+            // 
+            // picpath5_tbox
+            // 
+            this.picpath5_tbox.Location = new System.Drawing.Point(547, 121);
+            this.picpath5_tbox.Name = "picpath5_tbox";
+            this.picpath5_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath5_tbox.TabIndex = 40;
+            // 
+            // picpath14_tbox
+            // 
+            this.picpath14_tbox.Location = new System.Drawing.Point(417, 415);
+            this.picpath14_tbox.Name = "picpath14_tbox";
+            this.picpath14_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath14_tbox.TabIndex = 40;
+            // 
+            // picpath9_tbox
+            // 
+            this.picpath9_tbox.Location = new System.Drawing.Point(417, 267);
+            this.picpath9_tbox.Name = "picpath9_tbox";
+            this.picpath9_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath9_tbox.TabIndex = 40;
+            // 
+            // picpath18_tbox
+            // 
+            this.picpath18_tbox.Location = new System.Drawing.Point(287, 561);
+            this.picpath18_tbox.Name = "picpath18_tbox";
+            this.picpath18_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath18_tbox.TabIndex = 40;
+            // 
+            // picpath4_tbox
+            // 
+            this.picpath4_tbox.Location = new System.Drawing.Point(417, 121);
+            this.picpath4_tbox.Name = "picpath4_tbox";
+            this.picpath4_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath4_tbox.TabIndex = 40;
+            // 
+            // picpath13_tbox
+            // 
+            this.picpath13_tbox.Location = new System.Drawing.Point(287, 415);
+            this.picpath13_tbox.Name = "picpath13_tbox";
+            this.picpath13_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath13_tbox.TabIndex = 40;
+            // 
+            // picpath8_tbox
+            // 
+            this.picpath8_tbox.Location = new System.Drawing.Point(287, 267);
+            this.picpath8_tbox.Name = "picpath8_tbox";
+            this.picpath8_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath8_tbox.TabIndex = 40;
+            // 
+            // picpath17_tbox
+            // 
+            this.picpath17_tbox.Location = new System.Drawing.Point(156, 561);
+            this.picpath17_tbox.Name = "picpath17_tbox";
+            this.picpath17_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath17_tbox.TabIndex = 40;
+            // 
+            // picpath3_tbox
+            // 
+            this.picpath3_tbox.Location = new System.Drawing.Point(287, 121);
+            this.picpath3_tbox.Name = "picpath3_tbox";
+            this.picpath3_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath3_tbox.TabIndex = 40;
+            // 
+            // picpath12_tbox
+            // 
+            this.picpath12_tbox.Location = new System.Drawing.Point(156, 415);
+            this.picpath12_tbox.Name = "picpath12_tbox";
+            this.picpath12_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath12_tbox.TabIndex = 40;
+            // 
+            // picpath7_tbox
+            // 
+            this.picpath7_tbox.Location = new System.Drawing.Point(156, 267);
+            this.picpath7_tbox.Name = "picpath7_tbox";
+            this.picpath7_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath7_tbox.TabIndex = 40;
+            // 
+            // picpath16_tbox
+            // 
+            this.picpath16_tbox.Location = new System.Drawing.Point(27, 561);
+            this.picpath16_tbox.Name = "picpath16_tbox";
+            this.picpath16_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath16_tbox.TabIndex = 40;
+            // 
+            // picpath2_tbox
+            // 
+            this.picpath2_tbox.Location = new System.Drawing.Point(156, 121);
+            this.picpath2_tbox.Name = "picpath2_tbox";
+            this.picpath2_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath2_tbox.TabIndex = 40;
+            // 
+            // picpath11_tbox
+            // 
+            this.picpath11_tbox.Location = new System.Drawing.Point(27, 415);
+            this.picpath11_tbox.Name = "picpath11_tbox";
+            this.picpath11_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath11_tbox.TabIndex = 40;
+            // 
+            // picpath6_tbox
+            // 
+            this.picpath6_tbox.Location = new System.Drawing.Point(27, 267);
+            this.picpath6_tbox.Name = "picpath6_tbox";
+            this.picpath6_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath6_tbox.TabIndex = 40;
+            // 
+            // picpath1_tbox
+            // 
+            this.picpath1_tbox.Location = new System.Drawing.Point(27, 121);
+            this.picpath1_tbox.Name = "picpath1_tbox";
+            this.picpath1_tbox.Size = new System.Drawing.Size(100, 22);
+            this.picpath1_tbox.TabIndex = 40;
             // 
             // name20lbl
             // 
@@ -1327,6 +1480,7 @@
             // 
             // disconted_totaltxtbox
             // 
+            this.disconted_totaltxtbox.Enabled = false;
             this.disconted_totaltxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.disconted_totaltxtbox.Location = new System.Drawing.Point(187, 72);
             this.disconted_totaltxtbox.Name = "disconted_totaltxtbox";
@@ -1335,6 +1489,7 @@
             // 
             // discount_totaltxtbox
             // 
+            this.discount_totaltxtbox.Enabled = false;
             this.discount_totaltxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discount_totaltxtbox.Location = new System.Drawing.Point(155, 41);
             this.discount_totaltxtbox.Name = "discount_totaltxtbox";
@@ -1343,6 +1498,7 @@
             // 
             // qty_totaltxtbox
             // 
+            this.qty_totaltxtbox.Enabled = false;
             this.qty_totaltxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qty_totaltxtbox.Location = new System.Drawing.Point(155, 11);
             this.qty_totaltxtbox.Name = "qty_totaltxtbox";
@@ -1405,27 +1561,16 @@
             this.dessertsBtn.UseVisualStyleBackColor = false;
             this.dessertsBtn.Click += new System.EventHandler(this.dessertsBtn_Click);
             // 
-            // label14
+            // terminal_lbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(441, 56);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 16);
-            this.label14.TabIndex = 117;
-            this.label14.Text = "Terminal #21";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(268, 56);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 16);
-            this.label13.TabIndex = 116;
-            this.label13.Text = "By:  Anabella C. Doctor";
+            this.terminal_lbl.AutoSize = true;
+            this.terminal_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.terminal_lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.terminal_lbl.Location = new System.Drawing.Point(441, 56);
+            this.terminal_lbl.Name = "terminal_lbl";
+            this.terminal_lbl.Size = new System.Drawing.Size(84, 16);
+            this.terminal_lbl.TabIndex = 117;
+            this.terminal_lbl.Text = "Terminal #21";
             // 
             // label12
             // 
@@ -1477,154 +1622,6 @@
             this.dinnerBtn.UseVisualStyleBackColor = false;
             this.dinnerBtn.Click += new System.EventHandler(this.dinnerBtn_Click);
             // 
-            // picpath1_tbox
-            // 
-            this.picpath1_tbox.Location = new System.Drawing.Point(27, 121);
-            this.picpath1_tbox.Name = "picpath1_tbox";
-            this.picpath1_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath1_tbox.TabIndex = 40;
-            // 
-            // picpath2_tbox
-            // 
-            this.picpath2_tbox.Location = new System.Drawing.Point(156, 121);
-            this.picpath2_tbox.Name = "picpath2_tbox";
-            this.picpath2_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath2_tbox.TabIndex = 40;
-            // 
-            // picpath3_tbox
-            // 
-            this.picpath3_tbox.Location = new System.Drawing.Point(287, 121);
-            this.picpath3_tbox.Name = "picpath3_tbox";
-            this.picpath3_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath3_tbox.TabIndex = 40;
-            // 
-            // picpath4_tbox
-            // 
-            this.picpath4_tbox.Location = new System.Drawing.Point(417, 121);
-            this.picpath4_tbox.Name = "picpath4_tbox";
-            this.picpath4_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath4_tbox.TabIndex = 40;
-            // 
-            // picpath5_tbox
-            // 
-            this.picpath5_tbox.Location = new System.Drawing.Point(547, 121);
-            this.picpath5_tbox.Name = "picpath5_tbox";
-            this.picpath5_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath5_tbox.TabIndex = 40;
-            // 
-            // picpath6_tbox
-            // 
-            this.picpath6_tbox.Location = new System.Drawing.Point(27, 267);
-            this.picpath6_tbox.Name = "picpath6_tbox";
-            this.picpath6_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath6_tbox.TabIndex = 40;
-            // 
-            // picpath7_tbox
-            // 
-            this.picpath7_tbox.Location = new System.Drawing.Point(156, 267);
-            this.picpath7_tbox.Name = "picpath7_tbox";
-            this.picpath7_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath7_tbox.TabIndex = 40;
-            // 
-            // picpath8_tbox
-            // 
-            this.picpath8_tbox.Location = new System.Drawing.Point(287, 267);
-            this.picpath8_tbox.Name = "picpath8_tbox";
-            this.picpath8_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath8_tbox.TabIndex = 40;
-            // 
-            // picpath9_tbox
-            // 
-            this.picpath9_tbox.Location = new System.Drawing.Point(417, 267);
-            this.picpath9_tbox.Name = "picpath9_tbox";
-            this.picpath9_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath9_tbox.TabIndex = 40;
-            // 
-            // picpath10_tbox
-            // 
-            this.picpath10_tbox.Location = new System.Drawing.Point(547, 267);
-            this.picpath10_tbox.Name = "picpath10_tbox";
-            this.picpath10_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath10_tbox.TabIndex = 40;
-            // 
-            // picpath11_tbox
-            // 
-            this.picpath11_tbox.Location = new System.Drawing.Point(27, 415);
-            this.picpath11_tbox.Name = "picpath11_tbox";
-            this.picpath11_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath11_tbox.TabIndex = 40;
-            // 
-            // picpath16_tbox
-            // 
-            this.picpath16_tbox.Location = new System.Drawing.Point(27, 561);
-            this.picpath16_tbox.Name = "picpath16_tbox";
-            this.picpath16_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath16_tbox.TabIndex = 40;
-            // 
-            // picpath12_tbox
-            // 
-            this.picpath12_tbox.Location = new System.Drawing.Point(156, 415);
-            this.picpath12_tbox.Name = "picpath12_tbox";
-            this.picpath12_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath12_tbox.TabIndex = 40;
-            // 
-            // picpath17_tbox
-            // 
-            this.picpath17_tbox.Location = new System.Drawing.Point(156, 561);
-            this.picpath17_tbox.Name = "picpath17_tbox";
-            this.picpath17_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath17_tbox.TabIndex = 40;
-            // 
-            // picpath13_tbox
-            // 
-            this.picpath13_tbox.Location = new System.Drawing.Point(287, 415);
-            this.picpath13_tbox.Name = "picpath13_tbox";
-            this.picpath13_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath13_tbox.TabIndex = 40;
-            // 
-            // picpath18_tbox
-            // 
-            this.picpath18_tbox.Location = new System.Drawing.Point(287, 561);
-            this.picpath18_tbox.Name = "picpath18_tbox";
-            this.picpath18_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath18_tbox.TabIndex = 40;
-            // 
-            // picpath14_tbox
-            // 
-            this.picpath14_tbox.Location = new System.Drawing.Point(417, 415);
-            this.picpath14_tbox.Name = "picpath14_tbox";
-            this.picpath14_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath14_tbox.TabIndex = 40;
-            // 
-            // picpath19_tbox
-            // 
-            this.picpath19_tbox.Location = new System.Drawing.Point(417, 561);
-            this.picpath19_tbox.Name = "picpath19_tbox";
-            this.picpath19_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath19_tbox.TabIndex = 40;
-            // 
-            // picpath15_tbox
-            // 
-            this.picpath15_tbox.Location = new System.Drawing.Point(547, 415);
-            this.picpath15_tbox.Name = "picpath15_tbox";
-            this.picpath15_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath15_tbox.TabIndex = 40;
-            // 
-            // picpath20_tbox
-            // 
-            this.picpath20_tbox.Location = new System.Drawing.Point(547, 561);
-            this.picpath20_tbox.Name = "picpath20_tbox";
-            this.picpath20_tbox.Size = new System.Drawing.Size(100, 22);
-            this.picpath20_tbox.TabIndex = 40;
-            // 
-            // GridView
-            // 
-            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView.Location = new System.Drawing.Point(666, 334);
-            this.GridView.Name = "GridView";
-            this.GridView.Size = new System.Drawing.Size(240, 150);
-            this.GridView.TabIndex = 41;
-            // 
             // EmpID_lbl
             // 
             this.EmpID_lbl.AutoSize = true;
@@ -1635,11 +1632,24 @@
             this.EmpID_lbl.Size = new System.Drawing.Size(0, 16);
             this.EmpID_lbl.TabIndex = 112;
             // 
+            // timedate
+            // 
+            this.timedate.Checked = false;
+            this.timedate.CustomFormat = "MM/dd/yyyy - H:mm:ss";
+            this.timedate.Enabled = false;
+            this.timedate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timedate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timedate.Location = new System.Drawing.Point(306, 52);
+            this.timedate.Name = "timedate";
+            this.timedate.Size = new System.Drawing.Size(129, 22);
+            this.timedate.TabIndex = 136;
+            // 
             // POS_Cashier_Interface_Class
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 693);
+            this.Controls.Add(this.timedate);
             this.Controls.Add(this.breakfastBrn);
             this.Controls.Add(this.dinnerBtn);
             this.Controls.Add(this.groupBox1);
@@ -1650,8 +1660,7 @@
             this.Controls.Add(this.coffeeBtn);
             this.Controls.Add(this.beveragesBtn);
             this.Controls.Add(this.dessertsBtn);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.terminal_lbl);
             this.Controls.Add(this.EmpID_lbl);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lunchBtn);
@@ -1687,9 +1696,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1774,8 +1783,7 @@
         private System.Windows.Forms.Button coffeeBtn;
         private System.Windows.Forms.Button beveragesBtn;
         private System.Windows.Forms.Button dessertsBtn;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label terminal_lbl;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button lunchBtn;
         private System.Windows.Forms.Button breakfastBrn;
@@ -1823,6 +1831,7 @@
         private System.Windows.Forms.TextBox picpath1_tbox;
         private System.Windows.Forms.DataGridView GridView;
         private System.Windows.Forms.Label EmpID_lbl;
+        private System.Windows.Forms.DateTimePicker timedate;
     }
 }
 

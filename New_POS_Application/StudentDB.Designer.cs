@@ -183,7 +183,7 @@
             this.Edit_btn.Name = "Edit_btn";
             this.Edit_btn.Size = new System.Drawing.Size(146, 41);
             this.Edit_btn.TabIndex = 6;
-            this.Edit_btn.Text = "EDIT";
+            this.Edit_btn.Text = "UPDATE";
             this.Edit_btn.UseVisualStyleBackColor = false;
             this.Edit_btn.Click += new System.EventHandler(this.Edit_btn_Click);
             // 

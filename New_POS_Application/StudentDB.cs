@@ -39,18 +39,7 @@ namespace New_POS_Application
             clearall();
             Pboxpath.Enabled = false;
             Pboxpath.Hide();
-            conn.Open();
-            sql = "SELECT * FROM studentTbl ";
-            cmd = new SqlCommand(sql, conn);
-            cmd.CommandType = CommandType.Text;
-            sqladptr = new SqlDataAdapter();
-            sqladptr.SelectCommand = cmd;
-            cmd.ExecuteNonQuery();
-
-            dset = new DataSet();
-            sqladptr.Fill(dset, "studentTbl");
-            dataGridView1.DataSource = dset.Tables[0];
-            conn.Close();
+            defaulttable();
         }
 
         private void Save_btn_Click(object sender, EventArgs e)
@@ -186,11 +175,13 @@ namespace New_POS_Application
 
         private void New_btn_Click(object sender, EventArgs e)
         {
+            defaulttable();
             clearall();
         }
 
         private void Cancel_btn_Click(object sender, EventArgs e)
         {
+            defaulttable();
             clearall();
         }
 
@@ -201,6 +192,22 @@ namespace New_POS_Application
             StudentName_tbox.Clear();
             Dept_tbox.Clear();
             Pboxpath.Clear();
+        }
+
+        private void defaulttable()
+        {
+            conn.Open();
+            sql = "SELECT * FROM studentTbl ";
+            cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            sqladptr = new SqlDataAdapter();
+            sqladptr.SelectCommand = cmd;
+            cmd.ExecuteNonQuery();
+
+            dset = new DataSet();
+            sqladptr.Fill(dset, "studentTbl");
+            dataGridView1.DataSource = dset.Tables[0];
+            conn.Close();
         }
     }
 }

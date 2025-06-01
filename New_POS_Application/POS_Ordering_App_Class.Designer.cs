@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS_Ordering_App));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS_Ordering_App_Class));
             this.foodARdbtn = new System.Windows.Forms.RadioButton();
             this.foodBRdbtn = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -115,6 +115,31 @@
             this.DisplayPictureBox = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Scan_btn = new System.Windows.Forms.Button();
+            this.GridView = new System.Windows.Forms.DataGridView();
+            this.Submit_btn = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.EmpID_lbl = new System.Windows.Forms.Label();
+            this.picpath2_tbox = new System.Windows.Forms.TextBox();
+            this.picpath1_tbox = new System.Windows.Forms.TextBox();
+            this.picpath4_tbox = new System.Windows.Forms.TextBox();
+            this.picpath3_tbox = new System.Windows.Forms.TextBox();
+            this.picpath5_tbox = new System.Windows.Forms.TextBox();
+            this.picpath7_tbox = new System.Windows.Forms.TextBox();
+            this.picpath9_tbox = new System.Windows.Forms.TextBox();
+            this.picpath10_tbox = new System.Windows.Forms.TextBox();
+            this.picpath6_tbox = new System.Windows.Forms.TextBox();
+            this.picpath8_tbox = new System.Windows.Forms.TextBox();
+            this.picpath12_tbox = new System.Windows.Forms.TextBox();
+            this.picpath14_tbox = new System.Windows.Forms.TextBox();
+            this.picpath15_tbox = new System.Windows.Forms.TextBox();
+            this.picpath11_tbox = new System.Windows.Forms.TextBox();
+            this.picpath13_tbox = new System.Windows.Forms.TextBox();
+            this.picpath17_tbox = new System.Windows.Forms.TextBox();
+            this.picpath19_tbox = new System.Windows.Forms.TextBox();
+            this.picpath20_tbox = new System.Windows.Forms.TextBox();
+            this.picpath16_tbox = new System.Windows.Forms.TextBox();
+            this.picpath18_tbox = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -140,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
             // foodARdbtn
@@ -559,6 +585,26 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Thistle;
+            this.groupBox4.Controls.Add(this.picpath18_tbox);
+            this.groupBox4.Controls.Add(this.picpath13_tbox);
+            this.groupBox4.Controls.Add(this.picpath8_tbox);
+            this.groupBox4.Controls.Add(this.picpath3_tbox);
+            this.groupBox4.Controls.Add(this.picpath16_tbox);
+            this.groupBox4.Controls.Add(this.picpath20_tbox);
+            this.groupBox4.Controls.Add(this.picpath11_tbox);
+            this.groupBox4.Controls.Add(this.picpath15_tbox);
+            this.groupBox4.Controls.Add(this.picpath6_tbox);
+            this.groupBox4.Controls.Add(this.picpath19_tbox);
+            this.groupBox4.Controls.Add(this.picpath10_tbox);
+            this.groupBox4.Controls.Add(this.picpath14_tbox);
+            this.groupBox4.Controls.Add(this.picpath1_tbox);
+            this.groupBox4.Controls.Add(this.picpath17_tbox);
+            this.groupBox4.Controls.Add(this.picpath9_tbox);
+            this.groupBox4.Controls.Add(this.picpath12_tbox);
+            this.groupBox4.Controls.Add(this.picpath5_tbox);
+            this.groupBox4.Controls.Add(this.picpath7_tbox);
+            this.groupBox4.Controls.Add(this.picpath4_tbox);
+            this.groupBox4.Controls.Add(this.picpath2_tbox);
             this.groupBox4.Controls.Add(this.pictureBox17);
             this.groupBox4.Controls.Add(this.Exit_btn);
             this.groupBox4.Controls.Add(this.New_btn);
@@ -566,6 +612,7 @@
             this.groupBox4.Controls.Add(this.RemoveItem_btn);
             this.groupBox4.Controls.Add(this.Print_btn);
             this.groupBox4.Controls.Add(this.pictureBox19);
+            this.groupBox4.Controls.Add(this.Submit_btn);
             this.groupBox4.Controls.Add(this.Calculate_btn);
             this.groupBox4.Controls.Add(this.checkBox20);
             this.groupBox4.Controls.Add(this.pictureBox20);
@@ -625,7 +672,8 @@
             // Exit_btn
             // 
             this.Exit_btn.BackColor = System.Drawing.Color.MistyRose;
-            this.Exit_btn.Location = new System.Drawing.Point(600, 525);
+            this.Exit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.Location = new System.Drawing.Point(604, 525);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(110, 59);
             this.Exit_btn.TabIndex = 6;
@@ -636,7 +684,8 @@
             // New_btn
             // 
             this.New_btn.BackColor = System.Drawing.Color.MistyRose;
-            this.New_btn.Location = new System.Drawing.Point(457, 525);
+            this.New_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New_btn.Location = new System.Drawing.Point(488, 525);
             this.New_btn.Name = "New_btn";
             this.New_btn.Size = new System.Drawing.Size(110, 59);
             this.New_btn.TabIndex = 5;
@@ -659,7 +708,8 @@
             // RemoveItem_btn
             // 
             this.RemoveItem_btn.BackColor = System.Drawing.Color.MistyRose;
-            this.RemoveItem_btn.Location = new System.Drawing.Point(314, 525);
+            this.RemoveItem_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveItem_btn.Location = new System.Drawing.Point(372, 525);
             this.RemoveItem_btn.Name = "RemoveItem_btn";
             this.RemoveItem_btn.Size = new System.Drawing.Size(110, 59);
             this.RemoveItem_btn.TabIndex = 4;
@@ -670,7 +720,8 @@
             // Print_btn
             // 
             this.Print_btn.BackColor = System.Drawing.Color.MistyRose;
-            this.Print_btn.Location = new System.Drawing.Point(171, 525);
+            this.Print_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Print_btn.Location = new System.Drawing.Point(256, 525);
             this.Print_btn.Name = "Print_btn";
             this.Print_btn.Size = new System.Drawing.Size(110, 59);
             this.Print_btn.TabIndex = 3;
@@ -693,7 +744,8 @@
             // Calculate_btn
             // 
             this.Calculate_btn.BackColor = System.Drawing.Color.MistyRose;
-            this.Calculate_btn.Location = new System.Drawing.Point(28, 525);
+            this.Calculate_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calculate_btn.Location = new System.Drawing.Point(140, 525);
             this.Calculate_btn.Name = "Calculate_btn";
             this.Calculate_btn.Size = new System.Drawing.Size(110, 59);
             this.Calculate_btn.TabIndex = 2;
@@ -829,7 +881,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(466, 121);
+            this.checkBox4.Location = new System.Drawing.Point(457, 121);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(60, 17);
             this.checkBox4.TabIndex = 1;
@@ -1120,7 +1172,7 @@
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(110, 98);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 82;
             this.pictureBox2.TabStop = false;
             // 
@@ -1156,12 +1208,205 @@
             this.Scan_btn.UseVisualStyleBackColor = false;
             this.Scan_btn.Click += new System.EventHandler(this.Scan_btn_Click);
             // 
-            // POS_Ordering_App
+            // GridView
+            // 
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(12, 12);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(214, 58);
+            this.GridView.TabIndex = 9;
+            // 
+            // Submit_btn
+            // 
+            this.Submit_btn.BackColor = System.Drawing.Color.MistyRose;
+            this.Submit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Submit_btn.Location = new System.Drawing.Point(24, 525);
+            this.Submit_btn.Name = "Submit_btn";
+            this.Submit_btn.Size = new System.Drawing.Size(110, 59);
+            this.Submit_btn.TabIndex = 2;
+            this.Submit_btn.Text = "SUBMIT";
+            this.Submit_btn.UseVisualStyleBackColor = false;
+            this.Submit_btn.Click += new System.EventHandler(this.Submit_btn_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1090, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(76, 15);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Employee ID:";
+            // 
+            // EmpID_lbl
+            // 
+            this.EmpID_lbl.AutoSize = true;
+            this.EmpID_lbl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmpID_lbl.Location = new System.Drawing.Point(1172, 51);
+            this.EmpID_lbl.Name = "EmpID_lbl";
+            this.EmpID_lbl.Size = new System.Drawing.Size(0, 15);
+            this.EmpID_lbl.TabIndex = 2;
+            // 
+            // picpath2_tbox
+            // 
+            this.picpath2_tbox.Location = new System.Drawing.Point(184, 85);
+            this.picpath2_tbox.Name = "picpath2_tbox";
+            this.picpath2_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath2_tbox.TabIndex = 101;
+            // 
+            // picpath1_tbox
+            // 
+            this.picpath1_tbox.Location = new System.Drawing.Point(38, 85);
+            this.picpath1_tbox.Name = "picpath1_tbox";
+            this.picpath1_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath1_tbox.TabIndex = 101;
+            // 
+            // picpath4_tbox
+            // 
+            this.picpath4_tbox.Location = new System.Drawing.Point(470, 85);
+            this.picpath4_tbox.Name = "picpath4_tbox";
+            this.picpath4_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath4_tbox.TabIndex = 101;
+            // 
+            // picpath3_tbox
+            // 
+            this.picpath3_tbox.Location = new System.Drawing.Point(327, 85);
+            this.picpath3_tbox.Name = "picpath3_tbox";
+            this.picpath3_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath3_tbox.TabIndex = 101;
+            // 
+            // picpath5_tbox
+            // 
+            this.picpath5_tbox.Location = new System.Drawing.Point(613, 84);
+            this.picpath5_tbox.Name = "picpath5_tbox";
+            this.picpath5_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath5_tbox.TabIndex = 101;
+            // 
+            // picpath7_tbox
+            // 
+            this.picpath7_tbox.Location = new System.Drawing.Point(184, 213);
+            this.picpath7_tbox.Name = "picpath7_tbox";
+            this.picpath7_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath7_tbox.TabIndex = 101;
+            // 
+            // picpath9_tbox
+            // 
+            this.picpath9_tbox.Location = new System.Drawing.Point(470, 213);
+            this.picpath9_tbox.Name = "picpath9_tbox";
+            this.picpath9_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath9_tbox.TabIndex = 101;
+            // 
+            // picpath10_tbox
+            // 
+            this.picpath10_tbox.Location = new System.Drawing.Point(613, 212);
+            this.picpath10_tbox.Name = "picpath10_tbox";
+            this.picpath10_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath10_tbox.TabIndex = 101;
+            // 
+            // picpath6_tbox
+            // 
+            this.picpath6_tbox.Location = new System.Drawing.Point(38, 213);
+            this.picpath6_tbox.Name = "picpath6_tbox";
+            this.picpath6_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath6_tbox.TabIndex = 101;
+            // 
+            // picpath8_tbox
+            // 
+            this.picpath8_tbox.Location = new System.Drawing.Point(327, 213);
+            this.picpath8_tbox.Name = "picpath8_tbox";
+            this.picpath8_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath8_tbox.TabIndex = 101;
+            // 
+            // picpath12_tbox
+            // 
+            this.picpath12_tbox.Location = new System.Drawing.Point(184, 349);
+            this.picpath12_tbox.Name = "picpath12_tbox";
+            this.picpath12_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath12_tbox.TabIndex = 101;
+            // 
+            // picpath14_tbox
+            // 
+            this.picpath14_tbox.Location = new System.Drawing.Point(470, 349);
+            this.picpath14_tbox.Name = "picpath14_tbox";
+            this.picpath14_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath14_tbox.TabIndex = 101;
+            // 
+            // picpath15_tbox
+            // 
+            this.picpath15_tbox.Location = new System.Drawing.Point(613, 348);
+            this.picpath15_tbox.Name = "picpath15_tbox";
+            this.picpath15_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath15_tbox.TabIndex = 101;
+            // 
+            // picpath11_tbox
+            // 
+            this.picpath11_tbox.Location = new System.Drawing.Point(38, 349);
+            this.picpath11_tbox.Name = "picpath11_tbox";
+            this.picpath11_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath11_tbox.TabIndex = 101;
+            // 
+            // picpath13_tbox
+            // 
+            this.picpath13_tbox.Location = new System.Drawing.Point(327, 349);
+            this.picpath13_tbox.Name = "picpath13_tbox";
+            this.picpath13_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath13_tbox.TabIndex = 101;
+            // 
+            // picpath17_tbox
+            // 
+            this.picpath17_tbox.Location = new System.Drawing.Point(184, 467);
+            this.picpath17_tbox.Name = "picpath17_tbox";
+            this.picpath17_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath17_tbox.TabIndex = 101;
+            // 
+            // picpath19_tbox
+            // 
+            this.picpath19_tbox.Location = new System.Drawing.Point(470, 467);
+            this.picpath19_tbox.Name = "picpath19_tbox";
+            this.picpath19_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath19_tbox.TabIndex = 101;
+            // 
+            // picpath20_tbox
+            // 
+            this.picpath20_tbox.Location = new System.Drawing.Point(613, 466);
+            this.picpath20_tbox.Name = "picpath20_tbox";
+            this.picpath20_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath20_tbox.TabIndex = 101;
+            // 
+            // picpath16_tbox
+            // 
+            this.picpath16_tbox.Location = new System.Drawing.Point(38, 467);
+            this.picpath16_tbox.Name = "picpath16_tbox";
+            this.picpath16_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath16_tbox.TabIndex = 101;
+            // 
+            // picpath18_tbox
+            // 
+            this.picpath18_tbox.Location = new System.Drawing.Point(327, 467);
+            this.picpath18_tbox.Name = "picpath18_tbox";
+            this.picpath18_tbox.Size = new System.Drawing.Size(87, 20);
+            this.picpath18_tbox.TabIndex = 101;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy - H:mm:ss";
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(925, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
+            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.Value = new System.DateTime(2025, 6, 1, 23, 14, 51, 0);
+            // 
+            // POS_Ordering_App_Class
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.GridView);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.DisplayPictureBox);
             this.Controls.Add(this.groupBox4);
@@ -1171,8 +1416,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Scan_btn);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.EmpID_lbl);
+            this.Controls.Add(this.label15);
             this.DoubleBuffered = true;
-            this.Name = "POS_Ordering_App";
+            this.Name = "POS_Ordering_App_Class";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordering App";
             this.Load += new System.EventHandler(this.POS_Ordering_App_Load);
             this.groupBox1.ResumeLayout(false);
@@ -1204,6 +1452,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1297,5 +1546,30 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Scan_btn;
+        private System.Windows.Forms.DataGridView GridView;
+        private System.Windows.Forms.Button Submit_btn;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label EmpID_lbl;
+        private System.Windows.Forms.TextBox picpath2_tbox;
+        private System.Windows.Forms.TextBox picpath18_tbox;
+        private System.Windows.Forms.TextBox picpath13_tbox;
+        private System.Windows.Forms.TextBox picpath8_tbox;
+        private System.Windows.Forms.TextBox picpath3_tbox;
+        private System.Windows.Forms.TextBox picpath16_tbox;
+        private System.Windows.Forms.TextBox picpath20_tbox;
+        private System.Windows.Forms.TextBox picpath11_tbox;
+        private System.Windows.Forms.TextBox picpath15_tbox;
+        private System.Windows.Forms.TextBox picpath6_tbox;
+        private System.Windows.Forms.TextBox picpath19_tbox;
+        private System.Windows.Forms.TextBox picpath10_tbox;
+        private System.Windows.Forms.TextBox picpath14_tbox;
+        private System.Windows.Forms.TextBox picpath1_tbox;
+        private System.Windows.Forms.TextBox picpath17_tbox;
+        private System.Windows.Forms.TextBox picpath9_tbox;
+        private System.Windows.Forms.TextBox picpath12_tbox;
+        private System.Windows.Forms.TextBox picpath5_tbox;
+        private System.Windows.Forms.TextBox picpath7_tbox;
+        private System.Windows.Forms.TextBox picpath4_tbox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

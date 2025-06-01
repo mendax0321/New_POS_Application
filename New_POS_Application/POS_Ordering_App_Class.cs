@@ -7,16 +7,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.Aztec;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Image = System.Drawing.Image;
 
 namespace New_POS_Application
 {
     public partial class POS_Ordering_App_Class : Form
     {
+        POS_dbconnect dbconnect = new POS_dbconnect();
         POS_Class PC = new POS_Class();
         private int total_qty;
 
@@ -24,6 +28,14 @@ namespace New_POS_Application
         public POS_Ordering_App_Class()
         {
             InitializeComponent();
+            dbconnect.pos_connString();
+            dbconnect.pos_select();
+            dbconnect.pos_cmd();
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+            EmpID_lbl.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][22].ToString();
+            dbload();
         }
 
         private void POS_Ordering_App_Load(object sender, EventArgs e)
@@ -66,6 +78,33 @@ namespace New_POS_Application
                 displayListbox.Items.Add(foodBRdbtn.Text + " " + priceTxtBox.Text);
                 displayListbox.Items.Add(" Discount Amount: " + " " + discountAmountTxtbox.Text);
                 defaultqty();
+            }
+        }
+        private void Submit_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(changeTxtbox.Text))
+                {
+                    MessageBox.Show("Error occurs; Please contact your administrator!");
+                }
+                else
+                {
+                    dbconnect.pos_sql = "INSERT INTO order_salesTbl (discount_amount_per_transaction, discounted_amount_per_transaction, " +
+        "summary_total_quantity, summary_total_bills, customer_cash, customer_change, time_date, emp_id) VALUES('"
+        + discountAmountTxtbox.Text + "', '" + discountedAmountTxtbox.Text + "', '" + totalQtyTxtbox.Text + "', '"
+        + totalBillsTxtbox.Text + "', '" + cashGivenTxtbox.Text + "', '"
+        + changeTxtbox.Text + "', '" + dateTimePicker1.Text + "', '"
+        + EmpID_lbl.Text + "')";
+                dbconnect.pos_cmd();
+                dbconnect.pos_sqladapterInsert();
+                clear();
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error occurs; Please contact your administrator!");
             }
         }
 
@@ -162,7 +201,7 @@ namespace New_POS_Application
         {
             if (checkBox1.Checked == true)
             {
-                priceTxtBox.Text = "500.99";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][46].ToString(); ;
                 chkbx_function();
                 displayListbox.Items.Add(checkBox1.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -174,7 +213,7 @@ namespace New_POS_Application
         {
             if (checkBox2.Checked == true)
             {
-                priceTxtBox.Text = "550.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox2.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -185,7 +224,7 @@ namespace New_POS_Application
         {
             if (checkBox3.Checked == true)
             {
-                priceTxtBox.Text = "600.99";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox3.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -196,7 +235,7 @@ namespace New_POS_Application
         {
             if (checkBox4.Checked == true)
             {
-                priceTxtBox.Text = "700.50";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox4.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -207,7 +246,7 @@ namespace New_POS_Application
         {
             if (checkBox5.Checked == true)
             {
-                priceTxtBox.Text = "500.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox5.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -218,7 +257,7 @@ namespace New_POS_Application
         {
             if (checkBox6.Checked == true)
             {
-                priceTxtBox.Text = "750.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox6.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -229,7 +268,7 @@ namespace New_POS_Application
         {
             if (checkBox7.Checked == true)
             {
-                priceTxtBox.Text = "700.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox7.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -240,7 +279,7 @@ namespace New_POS_Application
         {
             if (checkBox8.Checked == true)
             {
-                priceTxtBox.Text = "850.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox8.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -251,7 +290,7 @@ namespace New_POS_Application
         {
             if (checkBox9.Checked == true)
             {
-                priceTxtBox.Text = "450.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox9.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -262,7 +301,7 @@ namespace New_POS_Application
         {
             if (checkBox10.Checked == true)
             {
-                priceTxtBox.Text = "650.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox10.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -273,7 +312,7 @@ namespace New_POS_Application
         {
             if (checkBox11.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox11.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -284,7 +323,7 @@ namespace New_POS_Application
         {
             if (checkBox12.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox12.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -295,7 +334,7 @@ namespace New_POS_Application
         {
             if (checkBox13.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox13.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -306,7 +345,7 @@ namespace New_POS_Application
         {
             if (checkBox14.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox14.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -317,7 +356,7 @@ namespace New_POS_Application
         {
             if (checkBox15.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox15.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -328,7 +367,7 @@ namespace New_POS_Application
         {
             if (checkBox16.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox16.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -339,7 +378,7 @@ namespace New_POS_Application
         {
             if (checkBox17.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox17.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -350,7 +389,7 @@ namespace New_POS_Application
         {
             if (checkBox18.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox18.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -361,7 +400,7 @@ namespace New_POS_Application
         {
             if (checkBox19.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox19.Text + " " + priceTxtBox.Text);
                 defaultqty();
@@ -372,11 +411,85 @@ namespace New_POS_Application
         {
             if (checkBox20.Checked == true)
             {
-                priceTxtBox.Text = "575.00";
+                priceTxtBox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
                 chkbx_function();
                 displayListbox.Items.Add(checkBox20.Text + " " + priceTxtBox.Text);
                 defaultqty();
             }
+        }
+
+        // FUNCTIONS
+
+        private void dbload()
+        {
+            dbconnect.pos_sql = "SELECT * FROM pos_nameTbl INNER JOIN pos_picTbl ON pos_nameTbl.pos_id = pos_picTbl.pos_id " +
+    "INNER JOIN pos_priceTbl ON pos_picTbl.pos_id = pos_priceTbl.pos_id WHERE pos_nameTbl.pos_id = '"
+    + 7 + "'";
+            dbconnect.pos_cmd();
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+            checkBox1.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
+            checkBox2.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
+            checkBox3.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
+            checkBox4.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
+            checkBox5.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
+            checkBox6.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
+            checkBox7.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
+            checkBox8.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
+            checkBox9.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
+            checkBox10.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
+            checkBox11.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
+            checkBox12.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
+            checkBox13.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
+            checkBox14.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
+            checkBox15.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
+            checkBox16.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
+            checkBox17.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
+            checkBox18.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
+            checkBox19.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
+            checkBox20.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
+
+            picpath1_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
+            pictureBox1.Image = Image.FromFile(picpath1_tbox.Text);
+            picpath2_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
+            pictureBox2.Image = Image.FromFile(picpath2_tbox.Text);
+            picpath3_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
+            pictureBox3.Image = Image.FromFile(picpath3_tbox.Text);
+            picpath4_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
+            pictureBox4.Image = Image.FromFile(picpath4_tbox.Text);
+            picpath5_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
+            pictureBox5.Image = Image.FromFile(picpath5_tbox.Text);
+            picpath6_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
+            pictureBox6.Image = Image.FromFile(picpath6_tbox.Text);
+            picpath7_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
+            pictureBox7.Image = Image.FromFile(picpath7_tbox.Text);
+            picpath8_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
+            pictureBox8.Image = Image.FromFile(picpath8_tbox.Text);
+            picpath9_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
+            pictureBox9.Image = Image.FromFile(picpath9_tbox.Text);
+            picpath10_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
+            pictureBox10.Image = Image.FromFile(picpath10_tbox.Text);
+            picpath11_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
+            pictureBox11.Image = Image.FromFile(picpath11_tbox.Text);
+            picpath12_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
+            pictureBox12.Image = Image.FromFile(picpath12_tbox.Text);
+            picpath13_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
+            pictureBox13.Image = Image.FromFile(picpath13_tbox.Text);
+            picpath14_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
+            pictureBox14.Image = Image.FromFile(picpath14_tbox.Text);
+            picpath15_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
+            pictureBox15.Image = Image.FromFile(picpath15_tbox.Text);
+            picpath16_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
+            pictureBox16.Image = Image.FromFile(picpath16_tbox.Text);
+            picpath17_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
+            pictureBox17.Image = Image.FromFile(picpath17_tbox.Text);
+            picpath18_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
+            pictureBox18.Image = Image.FromFile(picpath18_tbox.Text);
+            picpath19_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
+            pictureBox19.Image = Image.FromFile(picpath19_tbox.Text);
+            picpath20_tbox.Text = dbconnect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
+            pictureBox20.Image = Image.FromFile(picpath20_tbox.Text);
         }
 
         private void chkbx_function()
@@ -427,6 +540,30 @@ namespace New_POS_Application
         }
         private void clear()
         {
+            GridView.Hide();
+
+            // Hide picpath
+            picpath1_tbox.Hide();
+            picpath2_tbox.Hide();
+            picpath3_tbox.Hide();
+            picpath4_tbox.Hide();
+            picpath5_tbox.Hide();
+            picpath6_tbox.Hide();
+            picpath7_tbox.Hide();
+            picpath8_tbox.Hide();
+            picpath9_tbox.Hide();
+            picpath10_tbox.Hide();
+            picpath11_tbox.Hide();
+            picpath12_tbox.Hide();
+            picpath13_tbox.Hide();
+            picpath14_tbox.Hide();
+            picpath15_tbox.Hide();
+            picpath16_tbox.Hide();
+            picpath17_tbox.Hide();
+            picpath18_tbox.Hide();
+            picpath19_tbox.Hide();
+            picpath20_tbox.Hide();
+
             // Uncheck all given checkboxes
             clearA();
             clearB();
@@ -471,5 +608,6 @@ namespace New_POS_Application
             totalQtyTxtbox.Text = total_qty.ToString();
             totalBillsTxtbox.Text = total_amount.ToString("n");
         }
+
     }
 }
