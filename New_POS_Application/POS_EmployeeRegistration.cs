@@ -84,9 +84,9 @@ namespace New_POS_Application
                 if (dbconnect.pos_sql_dataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = dbconnect.pos_sql_dataset.Tables[0].Rows[0];
-                    firstnameLabel.Text = row["emp_fname"].ToString();
-                    middleNameLabel.Text = row["emp_mname"].ToString();
-                    lastNameLabel.Text = row["emp_surname"].ToString();
+                    firstNameTextBox.Text = row["emp_fname"].ToString();
+                    middleNameTextBox.Text = row["emp_mname"].ToString();
+                    lastNameTextBox.Text = row["emp_surname"].ToString();
                     ageTextBox.Text = row["emp_age"].ToString();
                     genderComboBox.Text = row["emp_gender"].ToString();
                     sssTextBox.Text = row["emp_sss_no"].ToString();

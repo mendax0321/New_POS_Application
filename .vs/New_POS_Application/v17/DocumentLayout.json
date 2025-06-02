@@ -1,7 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\repos\\mendax0321\\New_POS_Application\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|c:\\users\\rizal\\source\\repos\\mendax0321\\new_pos_application\\new_pos_application\\user_account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|solutionrelative:new_pos_application\\user_account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|c:\\users\\rizal\\source\\repos\\mendax0321\\new_pos_application\\new_pos_application\\user_account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|solutionrelative:new_pos_application\\user_account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|c:\\users\\rizal\\source\\repos\\mendax0321\\new_pos_application\\new_pos_application\\pos_employeeregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|solutionrelative:new_pos_application\\pos_employeeregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|c:\\users\\rizal\\source\\repos\\mendax0321\\new_pos_application\\new_pos_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|solutionrelative:new_pos_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|c:\\users\\rizal\\source\\repos\\mendax0321\\new_pos_application\\new_pos_application\\pos_employeeregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE0E63DC-5959-47FB-9257-748FB4712CB1}|New_POS_Application\\New_POS_Application.csproj|solutionrelative:new_pos_application\\pos_employeeregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +30,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -24,12 +53,67 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "POS_EmployeeRegistration.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\POS_EmployeeRegistration.cs",
+              "RelativeDocumentMoniker": "New_POS_Application\\POS_EmployeeRegistration.cs",
+              "ToolTip": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\POS_EmployeeRegistration.cs [Design]",
+              "RelativeToolTip": "New_POS_Application\\POS_EmployeeRegistration.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T12:16:18.036Z",
+              "EditorCaption": " [Design]"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\Program.cs",
+              "RelativeDocumentMoniker": "New_POS_Application\\Program.cs",
+              "ToolTip": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\Program.cs",
+              "RelativeToolTip": "New_POS_Application\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:43:00.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User_Account.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\User_Account.cs",
+              "RelativeDocumentMoniker": "New_POS_Application\\User_Account.cs",
+              "ToolTip": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\User_Account.cs [Design]",
+              "RelativeToolTip": "New_POS_Application\\User_Account.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:08:11.748Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "POS_EmployeeRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\POS_EmployeeRegistration.cs",
+              "RelativeDocumentMoniker": "New_POS_Application\\POS_EmployeeRegistration.cs",
+              "ToolTip": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\POS_EmployeeRegistration.cs",
+              "RelativeToolTip": "New_POS_Application\\POS_EmployeeRegistration.cs",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAQwO4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:58:59.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User_Account.cs",
+              "DocumentMoniker": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\User_Account.cs",
+              "RelativeDocumentMoniker": "New_POS_Application\\User_Account.cs",
+              "ToolTip": "C:\\Users\\rizal\\source\\repos\\mendax0321\\New_POS_Application\\New_POS_Application\\User_Account.cs",
+              "RelativeToolTip": "New_POS_Application\\User_Account.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:26:43.106Z",
+              "EditorCaption": ""
             }
           ]
         }

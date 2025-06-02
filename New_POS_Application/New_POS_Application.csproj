@@ -184,6 +184,12 @@
       <DependentUpon>TuitionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TuitonClass.cs" />
+    <Compile Include="User_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Account.Designer.cs">
+      <DependentUpon>User_Account.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Employee_Reports.resx">
       <DependentUpon>Employee_Reports.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TuitionForm.resx">
       <DependentUpon>TuitionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Account.resx">
+      <DependentUpon>User_Account.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />

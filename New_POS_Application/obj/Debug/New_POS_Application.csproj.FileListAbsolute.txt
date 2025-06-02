@@ -247,3 +247,8 @@ D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Ap
 D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Payroll_Reports.resources
 D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_EmployeeRegistration.resources
 D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Sales_Reports.resources
+C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Employee_Reports.resources
+C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Payroll_Reports.resources
+C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_EmployeeRegistration.resources
+C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Sales_Reports.resources
+C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.User_Account.resources

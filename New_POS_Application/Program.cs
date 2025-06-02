@@ -16,7 +16,7 @@ namespace New_POS_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sales_Reports());
+            Application.Run(new User_Account());
         }
     }
 }
