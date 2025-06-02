@@ -131,13 +131,15 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.employeePictureBox = new System.Windows.Forms.PictureBox();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picpath_tbox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.PicFile = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeePictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -1019,7 +1021,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(105, 60);
             this.AddButton.TabIndex = 106;
-            this.AddButton.Text = "Add";
+            this.AddButton.Text = "ADD";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -1030,7 +1032,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(105, 60);
             this.EditButton.TabIndex = 107;
-            this.EditButton.Text = "Edit";
+            this.EditButton.Text = "UPDATE";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -1041,7 +1043,7 @@
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(105, 60);
             this.DeleteButton.TabIndex = 108;
-            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.Text = "DELETE";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
@@ -1056,15 +1058,16 @@
             this.NewButton.UseVisualStyleBackColor = true;
             this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
-            // CancelButton
+            // ExitButton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(1160, 619);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(105, 60);
-            this.CancelButton.TabIndex = 110;
-            this.CancelButton.Text = "EXIT";
-            this.CancelButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Location = new System.Drawing.Point(1160, 619);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(105, 60);
+            this.ExitButton.TabIndex = 110;
+            this.ExitButton.Text = "EXIT";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // Exit
             // 
@@ -1095,9 +1098,11 @@
             this.BrowseButton.TabIndex = 113;
             this.BrowseButton.Text = "Browse";
             this.BrowseButton.UseVisualStyleBackColor = true;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.picpath_tbox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BrowseButton);
             this.groupBox1.Controls.Add(this.empIdTextBox);
@@ -1134,6 +1139,13 @@
             this.groupBox1.TabIndex = 114;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PERSONAL INFORMATION";
+            // 
+            // picpath_tbox
+            // 
+            this.picpath_tbox.Location = new System.Drawing.Point(109, 155);
+            this.picpath_tbox.Name = "picpath_tbox";
+            this.picpath_tbox.Size = new System.Drawing.Size(100, 23);
+            this.picpath_tbox.TabIndex = 114;
             // 
             // groupBox2
             // 
@@ -1223,6 +1235,10 @@
             this.groupBox3.TabIndex = 116;
             this.groupBox3.TabStop = false;
             // 
+            // PicFile
+            // 
+            this.PicFile.FileName = "openFileDialog1";
+            // 
             // POS_EmployeeRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1233,13 +1249,15 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Exit);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NewButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.GridView);
+            this.DoubleBuffered = true;
             this.Name = "POS_EmployeeRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Registration";
             this.Load += new System.EventHandler(this.POS_EmployeeRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
@@ -1358,12 +1376,14 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button NewButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.PictureBox employeePictureBox;
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox picpath_tbox;
+        private System.Windows.Forms.OpenFileDialog PicFile;
     }
 }

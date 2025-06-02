@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace New_POS_Application
 {
     public partial class Employee_Reports : Form
     {
+        POS_dbconnect dbconnect = new POS_dbconnect();
+
         public Employee_Reports()
         {
             InitializeComponent();
@@ -19,67 +22,52 @@ namespace New_POS_Application
 
         private void Employee_Reports_Load(object sender, EventArgs e)
         {
-
+            dbconnect.pos_connString();
+            DefaultGrid();
         }
 
         private void Search_btn_Click(object sender, EventArgs e)
-        {/*
+        {
             try
             {
                 if (Option_cbox.Text == "EMPLOYEE_NUMBER")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE emp_id
-                   = '" + optionInputTxtbox.Text + "'";
-     payrol_select();
+                    SearchFunction("emp_id");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "SURNAME")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               emp_surname = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_surname");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "FIRSTNAME")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               emp_fname = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_fname");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "DEPARTMENT")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               emp_department = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_department");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "DESIGNATION")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               position = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_position");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "ZIPCODE")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               add_zipcode = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_zip");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "PROVINCE")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               add_state_province = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_state");
                     InputBox();
                 }
                 else if (Option_cbox.Text == "CITY")
                 {
-                    payrol_db_connect.payrol_sql = "SELECT * FROM pos_empRegTbl WHERE
-               add_city = '" + optionInputTxtbox.Text + "'";
-                payrol_select();
+                    SearchFunction("emp_city");
                     InputBox();
                 }
                 else
@@ -89,14 +77,15 @@ namespace New_POS_Application
             }
             catch
             {
-
-            }*/
+                MessageBox.Show("Error Occured: Contact Your Administrator!");
+            }
         }
 
         private void Back_btn_Click(object sender, EventArgs e)
         {
             try
             {
+                DefaultGrid();
                 clear();
             }
             catch
@@ -117,6 +106,25 @@ namespace New_POS_Application
         {
             Option_tbox.Clear();
             Option_tbox.Focus();
+        }
+
+        internal void SearchFunction(string a)
+        {
+            dbconnect.pos_sql = "SELECT * FROM pos_empRegTbl WHERE " + a + " = @" + a;
+            dbconnect.pos_cmd();
+            dbconnect.pos_sql_command.Parameters.AddWithValue("@"+ a, Option_tbox.Text);
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
+        }
+
+        internal void DefaultGrid()
+        {
+            dbconnect.pos_select_EmpReg();
+            dbconnect.pos_cmd();
+            dbconnect.pos_sqladapterSelect();
+            dbconnect.pos_sqldatasetSELECT();
+            GridView.DataSource = dbconnect.pos_sql_dataset.Tables[0];
         }
     }
 }

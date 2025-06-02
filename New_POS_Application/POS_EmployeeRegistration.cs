@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using Image = System.Drawing.Image;
 
 namespace New_POS_Application
 {
@@ -15,13 +16,14 @@ namespace New_POS_Application
     {
         POS_dbconnect dbconnect = new POS_dbconnect();
         POS_Class PC = new POS_Class();
+        string picpath;
         public POS_EmployeeRegistration()
         {
             InitializeComponent();
             dbconnect.pos_connString();
             try
             {
-                dbconnect.pos_select();
+                dbconnect.pos_select_EmpReg();
                 dbconnect.pos_cmd();
                 dbconnect.pos_sqladapterSelect();
                 dbconnect.pos_sqldatasetSELECT();
@@ -41,7 +43,7 @@ namespace New_POS_Application
         {
             try
             {
-                dbconnect.pos_sql = "SELECT * FROM pos_empRegTbl";
+                dbconnect.pos_select_EmpReg();
                 dbconnect.pos_cmd();
                 dbconnect.pos_sqladapterSelect();
                 dbconnect.pos_sqldatasetSELECT();
@@ -50,6 +52,22 @@ namespace New_POS_Application
             catch (Exception)
             {
                 MessageBox.Show("Error loading employee data. Please contact your administrator.");
+            }
+        }
+        private void BrowseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PicFile.Filter = "Image File | * .gif; * .jpg; * .png; * .bmp; * .jfif;";
+                PicFile.Title = "Select Picture";
+                PicFile.ShowDialog();
+                picpath = PicFile.FileName;
+                picpath_tbox.Text = picpath;
+                employeePictureBox.Image = Image.FromFile(picpath);
+            }
+            catch
+            {
+                MessageBox.Show("No Image Selected");
             }
         }
 
@@ -113,6 +131,9 @@ namespace New_POS_Application
                     dateHiredTextBox.Text = row["emp_datehired"].ToString();
                     departmentTextBox.Text = row["emp_department"].ToString();
                     dependentsTextBox.Text = row["emp_dependents"].ToString();
+                    picpath_tbox.Text = row["picpath"].ToString();
+
+                    employeePictureBox.Image = Image.FromFile(picpath_tbox.Text);
                 }
 
                 else
@@ -137,22 +158,22 @@ namespace New_POS_Application
                      emp_country, emp_state, emp_zip, elem_name, elem_address, elem_yr_grad, elem_award, junior_high_name, junior_high_address,
                      junior_high_yr_grad, junior_high_award, senior_high_name, senior_high_address, senior_high_yr_grad, senior_high_track, senior_high_award,
                      college_school_name, college_address, college_yr_grad, college_award, college_course, emp_position, emp_datehired, emp_department,
-                     emp_dependents, others)
+                     emp_dependents, others, picpath)
                     VALUES
                     (@emp_id, @emp_fname, @emp_mname, @emp_surname, @emp_age, @emp_gender, @emp_sss_no, @emp_tin_no, @emp_philhealth_no, @emp_pagibig_no, @emp_status,
                      @emp_height, @emp_weight, @emp_yrsstay, @emp_house_no, @emp_subdivision, @emp_phase_no, @emp_street, @emp_barangay, @emp_municipality, @emp_city,
                      @emp_country, @emp_state, @emp_zip, @elem_name, @elem_address, @elem_yr_grad, @elem_award, @junior_high_name, @junior_high_address,
                      @junior_high_yr_grad, @junior_high_award, @senior_high_name, @senior_high_address, @senior_high_yr_grad, @senior_high_track, @senior_high_award,
                      @college_school_name, @college_address, @college_yr_grad, @college_award, @college_course, @emp_position, @emp_datehired, @emp_department,
-                     @emp_dependents, @others)";
+                     @emp_dependents, @others, @picpath)";
 
                 dbconnect.pos_cmd();
 
                 dbconnect.pos_sql_command.Parameters.Clear();
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_id", empIdTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_fname", firstnameLabel.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_mname", middleNameLabel.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_surname", lastNameLabel.Text);
+                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_fname", firstNameTextBox.Text);
+                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_mname", middleNameTextBox.Text);
+                dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_surname", lastNameTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_age", Convert.ToInt32(ageTextBox.Text));
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_gender", genderComboBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_sss_no", sssTextBox.Text);
@@ -185,13 +206,6 @@ namespace New_POS_Application
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_address", seniorHighAddressTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_yr_grad", seniorHighYearGradTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_track", seniorHighTrackTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@junior_high_address", juniorHighAddressTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@junior_high_yr_grad", juniorHighYearGradTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@junior_high_award", juniorHighAwardTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_name", seniorHighNameTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_address", seniorHighAddressTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_yr_grad", seniorHighYearGradTextBox.Text);
-                dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_track", seniorHighTrackTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@senior_high_award", seniorHighAwardTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@college_school_name", collegeNameTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@college_address", collegeAddressTextBox.Text);
@@ -203,6 +217,7 @@ namespace New_POS_Application
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_department", departmentTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_dependents", dependentsTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@others", othersTextBox.Text);
+                dbconnect.pos_sql_command.Parameters.AddWithValue("@picpath", picpath_tbox.Text);
 
                 dbconnect.pos_sqladapterInsert();
                 MessageBox.Show("Employee added successfully!");
@@ -256,7 +271,7 @@ namespace New_POS_Application
                     senior_high_name = @senior_high_name, senior_high_address = @senior_high_address, senior_high_yr_grad = @senior_high_yr_grad, senior_high_track = @senior_high_track, senior_high_award = @senior_high_award,
                     college_school_name = @college_school_name, college_address = @college_address, college_yr_grad = @college_yr_grad, college_award = @college_award,
                     college_course = @college_course, emp_position = @emp_position, emp_datehired = @emp_datehired, emp_department = @emp_department,
-                    emp_dependents = @emp_dependents, others = @others
+                    emp_dependents = @emp_dependents, others = @others, picpath = @picpath
                     WHERE emp_id = @emp_id";
 
                 dbconnect.pos_cmd();
@@ -308,6 +323,7 @@ namespace New_POS_Application
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_department", departmentTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_dependents", dependentsTextBox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@others", othersTextBox.Text);
+                dbconnect.pos_sql_command.Parameters.AddWithValue("@picpath", picpath_tbox.Text);
                 dbconnect.pos_sql_command.Parameters.AddWithValue("@emp_id", empIdTextBox.Text);
                 dbconnect.pos_sqladapterUpdate();
                 MessageBox.Show("Employee updated successfully!");
@@ -327,11 +343,9 @@ namespace New_POS_Application
             ClearFormFields();
             SetInitialControlStates();
         }
-
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-            ClearFormFields();
-            SetInitialControlStates();
+            this.Close();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -346,7 +360,7 @@ namespace New_POS_Application
             AddButton.Enabled = true;
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
-            CancelButton.Enabled = false;
+            ExitButton.Enabled = false;
         }
 
         private void ClearFormFields()
@@ -400,6 +414,5 @@ namespace New_POS_Application
             departmentTextBox.Clear();
             dependentsTextBox.Clear();
         }
-
     }
 }

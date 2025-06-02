@@ -66,6 +66,11 @@ namespace New_POS_Application
             pos_sql_dataset = new DataSet();
             pos_sql_dataadapter.Fill(pos_sql_dataset, "salesTbl");
         }
+        public void pos_select_EmpReg()
+        {
+            pos_sql = "SELECT * FROM pos_empRegTbl";
+        }
+
         public void pos_select()
         {
             pos_sql = "SELECT * FROM pos_nameTbl INNER JOIN pos_picTbl ON pos_nameTbl.pos_id = pos_picTbl.pos_id INNER JOIN pos_priceTbl ON pos_picTbl.pos_id = pos_priceTbl.pos_id";

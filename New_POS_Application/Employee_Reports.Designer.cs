@@ -33,8 +33,8 @@
             this.Option_cbox = new System.Windows.Forms.ComboBox();
             this.Search_btn = new System.Windows.Forms.Button();
             this.Back_btn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,14 +98,14 @@
             this.Back_btn.UseVisualStyleBackColor = false;
             this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
             // 
-            // dataGridView1
+            // GridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 382);
-            this.dataGridView1.TabIndex = 4;
+            this.GridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(12, 56);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(776, 382);
+            this.GridView.TabIndex = 4;
             // 
             // Employee_Reports
             // 
@@ -113,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridView);
             this.Controls.Add(this.Back_btn);
             this.Controls.Add(this.Search_btn);
             this.Controls.Add(this.Option_cbox);
@@ -123,7 +123,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee_Reports";
             this.Load += new System.EventHandler(this.Employee_Reports_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +136,6 @@
         private System.Windows.Forms.ComboBox Option_cbox;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Back_btn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView;
     }
 }

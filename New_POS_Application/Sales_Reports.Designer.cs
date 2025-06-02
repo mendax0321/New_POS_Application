@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView = new System.Windows.Forms.DataGridView();
             this.Back_btn = new System.Windows.Forms.Button();
             this.Search_btn = new System.Windows.Forms.Button();
             this.Option_cbox = new System.Windows.Forms.ComboBox();
             this.Option_tbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 382);
-            this.dataGridView1.TabIndex = 10;
+            this.GridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(12, 56);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(776, 382);
+            this.GridView.TabIndex = 10;
             // 
             // Back_btn
             // 
@@ -56,6 +56,7 @@
             this.Back_btn.TabIndex = 8;
             this.Back_btn.Text = "BACK";
             this.Back_btn.UseVisualStyleBackColor = false;
+            this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
             // 
             // Search_btn
             // 
@@ -67,9 +68,11 @@
             this.Search_btn.TabIndex = 9;
             this.Search_btn.Text = "SEARCH";
             this.Search_btn.UseVisualStyleBackColor = false;
+            this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
             // 
             // Option_cbox
             // 
+            this.Option_cbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Option_cbox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Option_cbox.FormattingEnabled = true;
             this.Option_cbox.Location = new System.Drawing.Point(182, 23);
@@ -101,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridView);
             this.Controls.Add(this.Back_btn);
             this.Controls.Add(this.Search_btn);
             this.Controls.Add(this.Option_cbox);
@@ -110,7 +113,7 @@
             this.Name = "Sales_Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales_Reports";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView;
         private System.Windows.Forms.Button Back_btn;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.ComboBox Option_cbox;

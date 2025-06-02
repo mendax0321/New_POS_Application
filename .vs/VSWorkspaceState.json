@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\New_POS_Application"
   ],
+  "SelectedNode": "\\New_POS_Application\\Employee_Reports.cs",
   "PreviewInSolutionExplorer": false
 }
