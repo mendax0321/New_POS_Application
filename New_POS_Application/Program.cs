@@ -16,7 +16,7 @@ namespace New_POS_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new POS_Ordering_App_Class());
+            Application.Run(new Employee_Reports());
         }
     }
 }

@@ -195,3 +195,12 @@ C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\o
 C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.exe
 C:\Users\rizal\source\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.pdb
 D:\repos\mendax0321\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_admin.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.exe.config
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_admin.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_Cashier_Interface_Class.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.POS_EmployeeRegistration.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.StudentDB.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.TuitionForm.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Employee_Reports.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Payroll_Reports.resources
+F:\App\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Sales_Reports.resources

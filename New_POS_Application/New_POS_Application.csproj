@@ -70,6 +70,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Reports.Designer.cs">
+      <DependentUpon>Employee_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll_Reports.Designer.cs">
+      <DependentUpon>Payroll_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS_admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     </Compile>
     <Compile Include="POS_Class.cs" />
     <Compile Include="POS_dbconnect.cs" />
+    <Compile Include="POS_EmployeeRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_EmployeeRegistration.Designer.cs">
+      <DependentUpon>POS_EmployeeRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS_EmployeeSalary_Class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,12 @@
     <Compile Include="QRscanner.Designer.cs">
       <DependentUpon>QRscanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales_Reports.Designer.cs">
+      <DependentUpon>Sales_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +184,12 @@
       <DependentUpon>TuitionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TuitonClass.cs" />
+    <EmbeddedResource Include="Employee_Reports.resx">
+      <DependentUpon>Employee_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll_Reports.resx">
+      <DependentUpon>Payroll_Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POS_admin.resx">
       <DependentUpon>POS_admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POS_Cashier_Interface_Class.resx">
       <DependentUpon>POS_Cashier_Interface_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_EmployeeRegistration.resx">
+      <DependentUpon>POS_EmployeeRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS_EmployeeSalary_Class.resx">
       <DependentUpon>POS_EmployeeSalary_Class.cs</DependentUpon>
@@ -205,6 +238,9 @@
     </Compile>
     <EmbeddedResource Include="QRscanner.resx">
       <DependentUpon>QRscanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales_Reports.resx">
+      <DependentUpon>Sales_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentDB.resx">
       <DependentUpon>StudentDB.cs</DependentUpon>

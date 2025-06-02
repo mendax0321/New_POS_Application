@@ -32,6 +32,10 @@ namespace New_POS_Application
                 MessageBox.Show("Error occurs in this area. Please contact your administrator!");
             }
         }
+        private void POS_EmployeeRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void LoadEmployeeData()
         {
@@ -47,65 +51,6 @@ namespace New_POS_Application
             {
                 MessageBox.Show("Error loading employee data. Please contact your administrator.");
             }
-        }
-        private void SetInitialControlStates()
-        {
-            AddButton.Enabled = true;
-            EditButton.Enabled = false;
-            DeleteButton.Enabled = false;
-            CancelButton.Enabled = false;
-        }
-
-        private void ClearFormFields()
-        {
-            empIdTextBox.Clear();
-            firstNameTextBox.Clear();
-            middleNameTextBox.Clear();
-            lastNameTextBox.Clear();
-            ageTextBox.Clear();
-            genderComboBox.SelectedIndex = -1;
-            sssTextBox.Clear();
-            tinTextBox.Clear();
-            philhealthTextBox.Clear();
-            pagibigTextBox.Clear();
-            statusComboBox.SelectedIndex = -1;
-            heightTextBox.Clear();
-            weightTextBox.Clear();
-            stayTextBox.Clear();
-            houseNumberTextBox.Clear();
-            subdivisionTextBox.Clear();
-            phaseTextBox.Clear();
-            streetTextBox.Clear();
-            barangayTextBox.Clear();
-            municipalityTextBox.Clear();
-            cityTextBox.Clear();
-            countryTextBox.Clear();
-            stateTextBox.Clear();
-            zipTextBox.Clear();
-            elemNameTextBox.Clear();
-            elemAddressTextBox.Clear();
-            elemYearGradTextBox.ResetText();
-            elemAwardTextBox.Clear();
-            juniorHighNameTextBox.Clear();
-            juniorHighAddressTextBox.Clear();
-            juniorHighYearGradTextBox.ResetText();
-            juniorHighAwardTextBox.Clear();
-            seniorHighNameTextBox.Clear();
-            seniorHighAddressTextBox.Clear();
-            seniorHighYearGradTextBox.ResetText();
-            seniorHighTrackTextBox.Clear();
-            seniorHighAwardTextBox.Clear();
-            collegeNameTextBox.Clear();
-            collegeAddressTextBox.Clear();
-            collegeYearGradTextBox.ResetText();
-            collegeAwardTextBox.Clear();
-            collegeCourseTextBox.Clear();
-            othersTextBox.Clear();
-            positionTextBox.Clear();
-            statusTextBox.Clear();
-            dateHiredTextBox.ResetText();
-            departmentTextBox.Clear();
-            dependentsTextBox.Clear();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -180,11 +125,6 @@ namespace New_POS_Application
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        private void label42_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -398,5 +338,68 @@ namespace New_POS_Application
         {
             this.Close();
         }
+
+        // FUNCTIONS
+
+        private void SetInitialControlStates()
+        {
+            AddButton.Enabled = true;
+            EditButton.Enabled = false;
+            DeleteButton.Enabled = false;
+            CancelButton.Enabled = false;
+        }
+
+        private void ClearFormFields()
+        {
+            empIdTextBox.Clear();
+            firstNameTextBox.Clear();
+            middleNameTextBox.Clear();
+            lastNameTextBox.Clear();
+            ageTextBox.Clear();
+            genderComboBox.SelectedIndex = -1;
+            sssTextBox.Clear();
+            tinTextBox.Clear();
+            philhealthTextBox.Clear();
+            pagibigTextBox.Clear();
+            statusComboBox.SelectedIndex = -1;
+            heightTextBox.Clear();
+            weightTextBox.Clear();
+            stayTextBox.Clear();
+            houseNumberTextBox.Clear();
+            subdivisionTextBox.Clear();
+            phaseTextBox.Clear();
+            streetTextBox.Clear();
+            barangayTextBox.Clear();
+            municipalityTextBox.Clear();
+            cityTextBox.Clear();
+            countryTextBox.Clear();
+            stateTextBox.Clear();
+            zipTextBox.Clear();
+            elemNameTextBox.Clear();
+            elemAddressTextBox.Clear();
+            elemYearGradTextBox.ResetText();
+            elemAwardTextBox.Clear();
+            juniorHighNameTextBox.Clear();
+            juniorHighAddressTextBox.Clear();
+            juniorHighYearGradTextBox.ResetText();
+            juniorHighAwardTextBox.Clear();
+            seniorHighNameTextBox.Clear();
+            seniorHighAddressTextBox.Clear();
+            seniorHighYearGradTextBox.ResetText();
+            seniorHighTrackTextBox.Clear();
+            seniorHighAwardTextBox.Clear();
+            collegeNameTextBox.Clear();
+            collegeAddressTextBox.Clear();
+            collegeYearGradTextBox.ResetText();
+            collegeAwardTextBox.Clear();
+            collegeCourseTextBox.Clear();
+            othersTextBox.Clear();
+            positionTextBox.Clear();
+            statusTextBox.Clear();
+            dateHiredTextBox.ResetText();
+            departmentTextBox.Clear();
+            dependentsTextBox.Clear();
+        }
+
     }
 }
