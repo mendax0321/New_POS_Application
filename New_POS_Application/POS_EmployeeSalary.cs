@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace New_POS_Application
 {
@@ -227,16 +229,130 @@ namespace New_POS_Application
             form_default();
         }
 
-        private void Cancel_btn_Click(object sender, EventArgs e)
-        {
-            form_default();
-        }
-
         private void Exit_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void Save_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Save employee compensation data to the database
+                string sql = "INSERT INTO payrollTbl (emp_id, basic_income, honorarium_income, other_income, gross_income, total_deductions, net_income) VALUES (@emp_id, @basic_income, @honorarium_income, @other_income, @gross_income, @total_deductions, @net_income)";
+                using (SqlConnection conn = new SqlConnection("Data Source=WYNE;Initial Catalog=POSDB;User  ID=sa;Password=anabelladoctor"))
+                {
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@emp_id", EmpNum_tbox.Text);
+                    cmd.Parameters.AddWithValue("@basic_income", basic_netincome);
+                    cmd.Parameters.AddWithValue("@honorarium_income", hono_netincome);
+                    cmd.Parameters.AddWithValue("@other_income", other_netincome);
+                    cmd.Parameters.AddWithValue("@gross_income", grossincome);
+                    cmd.Parameters.AddWithValue("@total_deductions", total_deduction);
+                    cmd.Parameters.AddWithValue("@net_income", netincome);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Data saved successfully!");
+                form_default();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving data: " + ex.Message);
+            }
+        }
+
+        private void Edit_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Update employee compensation data in the database
+                string sql = "UPDATE payrollTbl SET basic_income = @basic_income, honorarium_income = @honorarium_income, other_income = @other_income, gross_income = @gross_income, total_deductions = @total_deductions, net_income = @net_income WHERE emp_id = @emp_id";
+                using (SqlConnection conn = new SqlConnection("Data Source=WYNE;Initial Catalog=POSDB;User  ID=sa;Password=anabelladoctor"))
+                {
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@emp_id", EmpNum_tbox.Text);
+                    cmd.Parameters.AddWithValue("@basic_income", basic_netincome);
+                    cmd.Parameters.AddWithValue("@honorarium_income", hono_netincome);
+                    cmd.Parameters.AddWithValue("@other_income", other_netincome);
+                    cmd.Parameters.AddWithValue("@gross_income", grossincome);
+                    cmd.Parameters.AddWithValue("@total_deductions", total_deduction);
+                    cmd.Parameters.AddWithValue("@net_income", netincome);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Data updated successfully!");
+                form_default();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating data: " + ex.Message);
+            }
+        }
+
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Delete employee compensation data from the database
+                string sql = "DELETE FROM payrollTbl WHERE emp_id = @emp_id";
+                using (SqlConnection conn = new SqlConnection("Data Source=WYNE;Initial Catalog=POSDB;User  ID=sa;Password=anabelladoctor"))
+                {
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@emp_id", EmpNum_tbox.Text);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Data deleted successfully!");
+                form_default();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting data: " + ex.Message);
+            }
+        }
+
+        private void Search_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Search for employee compensation data based on employee number
+                string sql = "SELECT basic_income, honorarium_income, other_income, gross_income, total_deductions, net_income FROM payrollTbl WHERE emp_id = @emp_id";
+                using (SqlConnection conn = new SqlConnection("Data Source=WYNE;Initial Catalog=POSDB;User  ID=sa;Password=anabelladoctor"))
+                {
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@emp_id", EmpNum_tbox.Text);
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        // Populate the fields with the retrieved data
+                        basic_netincome = reader.GetDouble(0);
+                        hono_netincome = reader.GetDouble(1);
+                        other_netincome = reader.GetDouble(2);
+                        grossincome = reader.GetDouble(3);
+                        total_deduction = reader.GetDouble(4);
+                        netincome = reader.GetDouble(5);
+                        // Update the textboxes with the retrieved values
+                        BP_Income_tbox.Text = basic_netincome.ToString("n");
+                        H_TotalHonPay_tbox.Text = hono_netincome.ToString("n");
+                        OI_TotalIncPay_tbox.Text = other_netincome.ToString("n");
+                        Gross_tbox.Text = grossincome.ToString("n");
+                        TotalDeduc_tbox.Text = total_deduction.ToString("n");
+                        NetIncome_tbox.Text = netincome.ToString("n");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found for the given employee number.");
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching data: " + ex.Message);
+            }
+        }
         //Textbox Change
         private void BP_NumOfHours_tbox_TextChanged(object sender, EventArgs e)
         {
